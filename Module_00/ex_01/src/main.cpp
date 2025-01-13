@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:30:26 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/07 18:44:40 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/13 21:22:55 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,24 @@
 int	main()
 {
 	PhoneBook phoneBook;
-	int choice;
+	std::string	command;
 
-	phoneBook.add();
-	phoneBook.search();
-	//phoneBook.Exit();
+	phoneBook.displayMenu();
+	while (true)
+	{
+		std::cout << "Enter a command : ";
+		std::getline(std::cin, command);
+		if (command == "ADD")
+			phoneBook.add();
+		else if (command == "SEARCH")
+			phoneBook.search();
+		else if (command == "EXIT")
+		{
+			std::cout << "Exiting PhoneBook. " << std::endl;
+			break ;
+		}
+		else
+			std::cout << "Unknown command. Try again. " << std::endl;
+	}
 	return (0);
 }

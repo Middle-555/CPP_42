@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:30:36 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/13 17:20:02 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/13 21:26:38 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ public:
 
 	// Ensemble des setters 
 
-	void	Contact::setFirstName(const std::string &value);
-	void	Contact::setLastName(const std::string &value);
-	void	Contact::setNickName(const std::string &value);
-	void	Contact::setPhoneNumber(const std::string &value);
-	void	Contact::setDarkestSecret(const std::string &value);
+	void	setFirstName(const std::string &value);
+	void	setLastName(const std::string &value);
+	void	setNickName(const std::string &value);
+	void	setPhoneNumber(const std::string &value);
+	void	setDarkestSecret(const std::string &value);
 
 	// Ensemble des getters
 
-	std::string Contact::getFirstName() const;
-	std::string Contact::getLastName() const;
-	std::string Contact::getNickName() const;
-	std::string Contact::getPhoneNumber() const;
-	std::string Contact::getDarkestSecret() const;
+	std::string getFirstName() const;
+	std::string getLastName() const;
+	std::string getNickName() const;
+	std::string getPhoneNumber() const;
+	std::string getDarkestSecret() const;
 	
 };
 

@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:30:46 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/07 18:21:10 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/13 21:27:09 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ public:
 	void	add();
 	void	search();
 	void	printRepertory(Contact contact);
+	void	display(Contact contact);
+	void	displayIndex() const;
+	void	displayMenu();
+	std::string	validateNotEmpty(const std::string 
+		&fieldName);
+	std::string	validatePhoneNumber();
+	std::string	truncate(std::string str);
 };
 
 #endif
