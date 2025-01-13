@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/30 15:30:26 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/07 18:44:40 by kpourcel         ###   ########.fr       */
+/*   Created: 2025/01/07 17:14:32 by kpourcel          #+#    #+#             */
+/*   Updated: 2025/01/07 18:02:27 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
+#ifndef MAIN_HPP
+# define MAIN_HPP
 
-int	main()
-{
-	PhoneBook phoneBook;
-	int choice;
+#include <iostream>
+#include <string>
 
-	phoneBook.add();
-	phoneBook.search();
-	//phoneBook.Exit();
-	return (0);
-}
+class Contact;
+class PhoneBook;
+#endif
