@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 14:49:05 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/17 16:17:58 by kpourcel         ###   ########.fr       */
+/*   Created: 2025/01/19 15:20:56 by kpourcel          #+#    #+#             */
+/*   Updated: 2025/01/19 17:25:34 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int	main()
+#include <iostream>
+
+class brain
 {
-	int	hordeNumber = 5;
+private:
 
-	Zombie *horde = zombieHorde(hordeNumber, "Maitre Gims");
+public:
+	brain();
+	~brain();
+};
 
-	for (int i = 0; i < hordeNumber ; i++)
-		horde[i].announce();
-	delete[] horde;
-	return (0);
-}
+
+
+#endif 

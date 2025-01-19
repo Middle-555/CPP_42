@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 14:49:05 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/17 16:17:58 by kpourcel         ###   ########.fr       */
+/*   Created: 2025/01/19 15:21:18 by kpourcel          #+#    #+#             */
+/*   Updated: 2025/01/19 17:25:39 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "brain.hpp"
+
+brain::brain(void)
+{
+	std::cout << "HI THIS IS BRAIN" << std::endl;
+}
 
 int	main()
 {
-	int	hordeNumber = 5;
+	brain instance;
 
-	Zombie *horde = zombieHorde(hordeNumber, "Maitre Gims");
-
-	for (int i = 0; i < hordeNumber ; i++)
-		horde[i].announce();
-	delete[] horde;
-	return (0);
+	
 }
