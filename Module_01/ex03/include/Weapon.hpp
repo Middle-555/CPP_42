@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:53:01 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/21 15:39:59 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:43:59 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ private:
 public:
 	Weapon(std::string type);
 	~Weapon();
-	std::string	&getType(std::string  type) const;
+	const std::string	&getType() const;
 	void		setType(std::string  newType);
 };
 
