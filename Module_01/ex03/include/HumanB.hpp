@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:53:37 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/21 16:59:06 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/21 17:20:28 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class HumanB
 {
 private:
 	std::string	_name;
-	Weapon	*_weapon;
+	Weapon	*_weapon; // Pointeur sur l'arme init a null avec le constructeur 
 public:
 	HumanB(std::string name);
 	~HumanB();

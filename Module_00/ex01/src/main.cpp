@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:30:26 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/13 21:22:55 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/21 17:25:24 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int	main()
 	{
 		std::cout << "Enter a command : ";
 		std::getline(std::cin, command);
-		if (command == "ADD")
+		if (command == "ADD" || command == "add")
 			phoneBook.add();
-		else if (command == "SEARCH")
+		else if (command == "SEARCH" ||command == "search")
 			phoneBook.search();
-		else if (command == "EXIT")
+		else if (command == "EXIT" || command == "exit")
 		{
 			std::cout << "Exiting PhoneBook. " << std::endl;
 			break ;
