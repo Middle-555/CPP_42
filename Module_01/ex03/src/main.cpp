@@ -6,7 +6,15 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:53:50 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/21 14:53:51 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/21 15:14:01 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+
+int	main()
+{
+	return (0);
+}

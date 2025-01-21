@@ -6,7 +6,21 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:53:37 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/21 14:53:38 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/21 15:12:18 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef		HumanB_HPP
+# define	HumanB_HPP
+
+
+class HumanB
+{
+private:
+
+public:
+	HumanB();
+	~HumanB();
+};
+
+#endif
