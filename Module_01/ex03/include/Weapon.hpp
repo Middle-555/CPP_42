@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:53:01 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/21 15:06:02 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/21 15:39:59 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 class Weapon
 {
 private:
-	std::string	type();
+	std::string	_type;
 public:
-	Weapon();
+	Weapon(std::string type);
 	~Weapon();
-	std::string	getType(std::string const type);
-	void		setType(std::string const newType);
+	std::string	&getType(std::string  type) const;
+	void		setType(std::string  newType);
 };
 
 #endif
