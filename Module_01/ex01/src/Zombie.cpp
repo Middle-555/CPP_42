@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:49:26 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/17 16:13:14 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/20 14:58:23 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Zombie::	Zombie()
 	this->name = "maitre gims";
 }
 
-void	Zombie::setName(std::string name)
+void	Zombie:: setName(std::string name)
 {
 	this->name = name;
 }

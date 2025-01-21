@@ -6,7 +6,7 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 14:48:39 by kpourcel          #+#    #+#              #
-#    Updated: 2025/01/17 16:07:41 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/01/20 14:58:01 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,9 @@ INC_DIR = include
 OBJ_DIR = obj
 
 # Fichiers sources
-SRCS = $(SRC_DIR)/main.cpp \
-       $(SRC_DIR)/Zombie.cpp \
-       $(SRC_DIR)/zombieHorde.cpp
+SRCS =	$(SRC_DIR)/main.cpp \
+	$(SRC_DIR)/zombieHorde.cpp \
+	$(SRC_DIR)/Zombie.cpp \
 
 # Génération des fichiers objets
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
