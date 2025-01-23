@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 22:01:55 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/23 17:18:44 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:40:48 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,7 @@ int	main(int argc, char **argv)
 	std::string	s2 = argv[3];
 	std::string	line;
 	std::string 	fileContent;
-	
-	// test
-	std::cout << "Fichier : " << file << std::endl;
-	std::cout << "s1 (à remplacer) : '" << s1 << "'" << std::endl;
-	std::cout << "s2 (remplacement) : '" << s2 << "'" << std::endl;
 
-	// Ouverture du fichier 
 	std::ifstream	inputFile(file);
 	if (!inputFile)
 	{
@@ -51,6 +45,6 @@ int	main(int argc, char **argv)
 		}
 		inputFile.close();
 		std::string changed = sed.findAndReplace(fileContent, s1, s2);
-		sed.writeToFile(file, changed);
+		sed.createAndCopy(file, changed);
 	}
 }

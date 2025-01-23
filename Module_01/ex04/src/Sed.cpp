@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 22:06:12 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/23 17:21:10 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:40:00 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ Sed::	~Sed()
 
 size_t	Sed::findFirstToReplace(const std::string& fileContent, const std::string& s1) 
 {
-	std::cout << "Contenu du fichier lu : " << fileContent << std::endl;
-
 	return (fileContent.find(s1));
 }
 
@@ -49,9 +47,7 @@ size_t	Sed::findFirstToReplace(const std::string& fileContent, const std::string
 
 size_t	Sed::findLastToReplace(const std::string& fileContent, const std::string& s1)
 {
-	std::cout << "Contenu du fichier lu : " << fileContent << std::endl;
 	return (fileContent.rfind(s1));
-	
 }
 
 /**
@@ -63,14 +59,12 @@ size_t	Sed::findLastToReplace(const std::string& fileContent, const std::string&
  * @param s2 String qui modifie s1.
  * @return std::string FileContent pour créer le nouveau Fichier.replace
  */
-std::string	Sed::findAndReplace(std::string& fileContent, std::string s1, std::string s2)
+std::string	Sed::findAndReplace(std::string& fileContent, const std::string s1, const std::string s2)
 {
 	size_t	firstReplace = findFirstToReplace(fileContent, s1);
 	size_t	lastReplace = findLastToReplace(fileContent, s1);
 	size_t	i = 0;
 
-	std::cout << "Premier caractere trouvée : " << firstReplace << std::endl;
-	std::cout << "Dernier caractere trouvée : " << lastReplace << std::endl;
 	if (firstReplace == std::string::npos || lastReplace  == std::string::npos)
 	{
 		std::cout << "Aucune occurrence de '" << s1 << "' trouvée dans le texte." << std::endl;
@@ -86,7 +80,7 @@ std::string	Sed::findAndReplace(std::string& fileContent, std::string s1, std::s
 		fileContent.insert(i, s2);
 		i += s2.length();
 	}
-	std::cout << "Voici la str modifier : " << fileContent << std::endl;
+	std::cout << "Voici le fichier modifier : " << fileContent << std::endl;
 	return (fileContent);
 }
 
@@ -96,7 +90,7 @@ std::string	Sed::findAndReplace(std::string& fileContent, std::string s1, std::s
  * @param filename 
  * @param fileContent 
  */
-void	Sed::writeToFile(const std::string& filename, const std::string& fileContent)
+void	Sed::createAndCopy(const std::string& filename, const std::string& fileContent)
 {
     std::string newFilename = filename + ".replace";
     std::ofstream outputFile(newFilename);
