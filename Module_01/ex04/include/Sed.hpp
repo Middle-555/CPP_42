@@ -6,12 +6,12 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 22:04:55 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/22 01:45:58 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:16:49 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		SED_HPP
-# define	SED_HPP
+#ifndef	Sed_HPP
+# define Sed_HPP
 
 #include <iostream>
 #include <fstream>
@@ -24,8 +24,10 @@ private:
 public:
 	Sed();
 	~Sed();
-	std::string	Sed::findString(std:: string find) const;
-	std::string	Sed:: findAndCopy(std::ifstream& file, std::string str, std::string dest);
+	size_t		findFirstToReplace(const std::string& fileContent, const std::string& s1);
+	size_t		findLastToReplace(const std::string& fileContent, const std::string& s1);
+	std::string	findAndReplace(std::string& fileContent, std::string s1, std::string s2);
+	void		writeToFile(const std::string& filename, const std::string& fileContent);
 };
 
 #endif
