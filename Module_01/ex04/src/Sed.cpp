@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 22:06:12 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/23 17:40:00 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:49:46 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ std::string	Sed::findAndReplace(std::string& fileContent, const std::string s1, 
 void	Sed::createAndCopy(const std::string& filename, const std::string& fileContent)
 {
     std::string newFilename = filename + ".replace";
-    std::ofstream outputFile(newFilename);
+    std::ofstream outputFile(newFilename.c_str());
     if (!outputFile)
     {
         std::cerr << "Erreur : impossible de créer le fichier " << newFilename << std::endl;

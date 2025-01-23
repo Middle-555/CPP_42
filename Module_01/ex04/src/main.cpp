@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 22:01:55 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/23 17:40:48 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:49:10 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	std::string	line;
 	std::string 	fileContent;
 
-	std::ifstream	inputFile(file);
+	std::ifstream	inputFile(file.c_str());
 	if (!inputFile)
 	{
 		std::cout << "Can't open the file." << std::endl;
