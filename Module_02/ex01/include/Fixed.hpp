@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.cpp                                          :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 20:26:48 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/28 20:27:37 by kpourcel         ###   ########.fr       */
+/*   Created: 2025/01/28 20:25:48 by kpourcel          #+#    #+#             */
+/*   Updated: 2025/01/28 21:30:45 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#ifndef		FIXED_HPP
+# define 	FIXED_HPP
 
-fixed::	fixed()
-{
-	std::cout << " Default constructor called" << std::endl;
-	return ;
-}
+#include <iostream>
+#include <cmath>
 
-fixed::	~fixed()
+class Fixed
 {
-	std::cout << " Default destructor called" << std::endl;
-	return ;
-}
+private:
+
+public:
+	Fixed();
+	Fixed(const int n);
+	Fixed ( Fixed const &other);
+	~Fixed();
+	Fixed &	operator=(Fixed const &other);
+	float toFloat( void ) const;
+	int toInt( void ) const;
+};
+
+#endif
