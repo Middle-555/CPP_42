@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 20:25:48 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/28 20:29:29 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/28 20:43:05 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include <iostream>
 #include <cmath>
 
-class fixed
+class Fixed
 {
 private:
 
 public:
-	fixed();
-	fixed(const int n);
-	~fixed();
+	Fixed();
+	Fixed(const int n);
+	~Fixed();
 };
 
 
