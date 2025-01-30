@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 20:26:48 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/30 17:04:19 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/01/30 19:16:55 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ Fixed::	Fixed()
 
 Fixed::	Fixed(const int n)
 {
-	std::cout << "Default int parameter constructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 	this->_fixedValue = n * (1 <<_fixedBits);
 	return ;
 }
 Fixed::	Fixed(const float f)
 {
-	std::cout << "Default float parameter constructor called" << std::endl;
+	std::cout << "Float constructor called" << std::endl;
 	this->_fixedValue = static_cast<int>(roundf(f * (1 << _fixedBits)));
 	return ;
 }
@@ -53,13 +53,11 @@ Fixed &Fixed ::operator=(Fixed const &other)
 
 int	Fixed:: getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixedValue);
 }
 
 void	Fixed:: setRawBits( int const raw )
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_fixedValue = raw;
 }
 float	Fixed:: toFloat( void ) const
@@ -74,6 +72,6 @@ int	Fixed:: toInt( void ) const
 
 std::ostream &operator<<(std::ostream &os, Fixed const &Fixed)
 {
-	os << "Fixed(float value: = " << Fixed.toFloat() << "Fixed(int value: = " << Fixed.toInt() << std::endl;
+	os << Fixed.toFloat();
 	return (os);
 }
