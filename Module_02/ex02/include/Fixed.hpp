@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:22:19 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/31 16:59:48 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/01 19:58:45 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,17 @@ public:
 	bool	operator<(const Fixed &others);
 
 // Operateurs d'incrementation 
-
 Fixed	& operator++(void);
 Fixed	operator++(int);
 Fixed	& operator--(void);
 Fixed	 operator--(int);
+
+// Fonction min / max
+static Fixed& min(Fixed& n, Fixed& n2);
+static const Fixed& min(const Fixed& n, const Fixed& n2 );
+static Fixed& max(Fixed& n, Fixed& n2);
+static const Fixed& max(const Fixed& n, const Fixed& n2 );
+
 };
 std::ostream	&operator<<(std::ostream &os, const Fixed &Fixed);
 

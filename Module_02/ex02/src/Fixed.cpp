@@ -6,11 +6,9 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:22:08 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/31 18:20:46 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/01 20:04:36 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "Fixed.hpp"
 
 #include "Fixed.hpp"
 
@@ -81,17 +79,17 @@ std::ostream &operator<<(std::ostream &os, Fixed const &Fixed)
 // Operateur arithmetique
 Fixed	Fixed:: operator+(const Fixed &others)
 {
-	return Fixed(this->toFloat()) + others.toFloat();
+	return Fixed(this->toFloat() + others.toFloat());
 }
 
 Fixed	Fixed:: operator-(const Fixed &others)
 {
-	return Fixed(this->toFloat()) - others.toFloat();
+	return Fixed(this->toFloat() - others.toFloat());
 }
 
 Fixed	Fixed:: operator*(const Fixed &others)
 {
-	return Fixed(this->toFloat()) * others.toFloat();
+	return Fixed(this->toFloat() * others.toFloat());
 }
 
 Fixed	Fixed:: operator/(const Fixed &others)
@@ -103,7 +101,7 @@ Fixed	Fixed:: operator/(const Fixed &others)
 		std::cout << "Error: division by zero" << std::endl;
 		return (Fixed(0));
 	}
-	return Fixed(this->toFloat()) / others.toFloat();
+	return Fixed(this->toFloat() / others.toFloat());
 }
 
 // Operateur de comparaison 
@@ -150,7 +148,7 @@ Fixed	&Fixed::operator++(void)
 
 Fixed	Fixed::operator++(int)
 {
-	Fixed	tmp = this->_fixedValue;
+	Fixed	tmp = (*this);
 	
 	this->_fixedValue++;
 	return (tmp);
@@ -164,8 +162,44 @@ Fixed	&Fixed::operator--(void)
 
 Fixed	Fixed::operator--(int)
 {
-	Fixed	tmp = this->_fixedValue;
+	Fixed	tmp = (*this);
 	
 	this->_fixedValue--;
 	return (tmp);
+}
+
+
+Fixed& Fixed::min(Fixed& n, Fixed& n2)
+{
+
+	if (n._fixedValue > n2._fixedValue)
+		return n2;
+	else 
+		return n;
+}
+
+const Fixed& Fixed::min(const Fixed& n, const Fixed& n2)
+{
+
+	if (n._fixedValue > n2._fixedValue)
+		return n2;
+	else 
+		return n;
+}
+
+Fixed& Fixed::max(Fixed& n, Fixed& n2)
+{
+	if (n._fixedValue < n2._fixedValue)
+		return n2;
+	else 
+		return n;
+}
+
+const Fixed& Fixed::max(const Fixed& n, const Fixed& n2)
+{
+
+	if (n._fixedValue < n2._fixedValue)
+		return n2;
+	else 
+		return n;
 }
