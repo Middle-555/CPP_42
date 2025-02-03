@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:09:14 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/03 14:29:37 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/03 17:39:36 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 
 #include <iostream>
 #include <string>
+
+
 class ClapTrap
 {
 private:
+
+protected : 
 	std::string _name;
 	int	_hitPoint;
 	int	_energyPoint;

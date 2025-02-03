@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:00:59 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/03 15:03:40 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/03 18:30:17 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,19 @@
 
 #include <iostream>
 #include <string>
-class ScavTrap
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
 private:
-	std::string _name;
-	int	_hitPoint;
-	int	_energyPoint;
-	int	_attackDamage;
+
 public:
+	ScavTrap();
+	~ScavTrap();
+	ScavTrap(const std::string &name);
+	ScavTrap ( ClapTrap const &other);
+	ScavTrap & operator=(ScavTrap const &other);
+	
 	void guardGate();
 };
 

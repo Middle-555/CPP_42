@@ -6,11 +6,12 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:09:31 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/03 14:48:56 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/03 18:43:29 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
 
 ClapTrap::ClapTrap()
 {
@@ -29,20 +30,17 @@ ClapTrap::ClapTrap(const std::string &name) : _name(name)
 	return ;
 }
 
-
 ClapTrap::~ClapTrap()
 {
 	std::cout << "Default destructor called" << std::endl;
 	return ;
 }
 
-
 ClapTrap::	ClapTrap ( ClapTrap const &other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
-
 
 ClapTrap &ClapTrap ::operator=(ClapTrap const &other)
 {
@@ -79,6 +77,7 @@ void	ClapTrap:: attack(const std::string& target)
 	}
 		
 }
+
 void	ClapTrap:: takeDamage(unsigned int amount)
 {
 	if (_hitPoint == 0)
@@ -89,10 +88,14 @@ void	ClapTrap:: takeDamage(unsigned int amount)
 	else
 	{
 		_hitPoint -= amount;
-		std::cout << "ClapTrap " << this->_name << " as now " << _hitPoint << " hp left" << std::endl;
+		if (_hitPoint <= 0)
+			std::cout << "ClapTrap " << this->_name << " as now 0 hp left" << std::endl;
+		else
+			std::cout << "ClapTrap " << this->_name << " as now " << _hitPoint << " hp left" << std::endl;
 		return ;
 	}
 }
+
 void	ClapTrap:: beRepaired(unsigned int amount)
 {
 	if (_hitPoint == 0)
@@ -107,7 +110,6 @@ void	ClapTrap:: beRepaired(unsigned int amount)
 	}
 	else
 	{
-		std::cout << "ClapTrap " << this->_name << " repair " << _hitPoint << " hp left" << std::endl;
 		_energyPoint -= 1;
 		_hitPoint += amount;
 		std::cout << "ClapTrap " << this->_name << " as now " << _hitPoint << " hp left" << std::endl;
