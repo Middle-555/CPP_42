@@ -6,14 +6,14 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 00:15:24 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/04 00:36:07 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/04 16:49:47 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
-FragTrap:: FragTrap() : ClapTrap()
+FragTrap:: FragTrap() 
 {
 	std::cout << "FragTrap Default constructor called" << std::endl;
 	this->setAttackDamage(30);
@@ -54,7 +54,6 @@ FragTrap &FragTrap ::operator=(FragTrap const &other)
 	}	
 	return (*this);
 }
-
 
 void	FragTrap:: highFivesGuys(void)
 {
