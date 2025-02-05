@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 00:15:24 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/04 16:49:47 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:01:41 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ FragTrap::	~FragTrap()
 	return ;
 }
 
-FragTrap::  FragTrap( ClapTrap const &other)
+FragTrap::  FragTrap( FragTrap const &other) : ClapTrap(other)
 {
 	std::cout << "FragTrap Copy constructor called" << std::endl;
 	*this = other;

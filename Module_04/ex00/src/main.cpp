@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:03:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/04 18:41:19 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/05 15:46:19 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
-	delete(j);
 	delete(i);
-	return 0;
+	delete(j);
+	delete(meta);
 }

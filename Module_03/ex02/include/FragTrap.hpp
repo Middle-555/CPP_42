@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 00:15:14 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/04 00:27:35 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/05 15:56:15 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	FragTrap();
 	~FragTrap();
 	FragTrap(const std::string &name);
-	FragTrap ( ClapTrap const &other);
+	FragTrap ( FragTrap const &other);
 	FragTrap & operator=(FragTrap const &other);
 // Fonction membre exo
 	void	highFivesGuys(void);

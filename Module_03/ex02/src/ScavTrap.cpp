@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:01:12 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/04 00:30:21 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:01:23 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ScavTrap::	ScavTrap(const std::string &name) : ClapTrap(name)
 	return ;
 }
 
-ScavTrap::  ScavTrap( ClapTrap const &other)
+ScavTrap::  ScavTrap( ScavTrap const &other) : ClapTrap(other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;

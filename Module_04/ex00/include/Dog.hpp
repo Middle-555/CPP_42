@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:36 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/05 14:28:16 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/05 15:51:30 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@
 #include <iostream>
 #include "Animal.hpp"
 
-class Dog : Animal
+class Dog : public Animal
 {
 private:
 
 protected :
 
 public:
+	virtual ~Dog();
 	Dog();
-	~Dog();
 	Dog(Dog const &other);
-	Dog & operator=(Animal const &other);
-	
+	Dog & operator=(Dog const &other);
+	void	makeSound() const;
 };
 
 #endif

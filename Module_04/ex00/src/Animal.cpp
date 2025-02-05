@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:21 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/05 14:23:40 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/05 15:52:39 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 Animal::	Animal()
 {
 	std::cout << "Default Animal Constructor Called" << std::endl;
+	this->_type = "Animal";
 	return ;
 }
 
 Animal::	~Animal()
 {
-	std::cout << "Default Animal Destructor Called" << std::endl;
+	std::cout << "Default Virtual Animal Destructor Called" << std::endl;
 	return ;
 }
 
@@ -41,4 +42,9 @@ Animal &Animal :: operator=(Animal const &other)
 std::string const &Animal::  getType() const
 {
 	return (this->_type);
+}
+
+void	Animal:: makeSound() const
+{
+	std::cout << "Generic animal sound" << std::endl;
 }
