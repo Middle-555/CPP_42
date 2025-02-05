@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:13 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/04 18:33:03 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:16:33 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,4 @@ std::string  const &getType() const;
 
 std::ostream &operator<<(std::ostream &os, Animal const &rhs);
 
-#endif 
+#endif

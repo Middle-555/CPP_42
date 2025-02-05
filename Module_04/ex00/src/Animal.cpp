@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:21 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/04 18:42:38 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/05 14:23:40 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,3 @@ std::string const &Animal::  getType() const
 {
 	return (this->_type);
 }
-

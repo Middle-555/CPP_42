@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:29 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/04 18:02:06 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/05 14:27:59 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,9 @@ protected:
 public:
 	Cat();
 	~Cat();
+	Cat(Cat const &other);
+	Cat & operator=(Animal const &other);
+	
 };
-
-Cat::Cat(/* args */)
-{
-}
-
-Cat::~Cat()
-{
-}
-
-
 
 #endif
