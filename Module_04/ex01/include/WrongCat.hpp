@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 17:04:29 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/06 13:53:05 by kpourcel         ###   ########.fr       */
+/*   Created: 2025/02/06 13:49:47 by kpourcel          #+#    #+#             */
+/*   Updated: 2025/02/06 18:53:35 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+
+#ifndef WRONG_CAT_HPP
+# define  WRONG_CAT_HPP
 
 #include <string>
 #include <iostream>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-
-class Cat : public Animal 
+class wrongCat : public wrongAnimal
 {
 protected:
 
 public:
-	virtual ~Cat();
-	Cat();
-	Cat(Cat const &other);
-	Cat & operator=(Cat const &other);
-	void	makeSound() const;
+	wrongCat();
+	~wrongCat();
+	wrongCat(wrongCat const &other);
+	wrongCat & operator=(wrongCat const &other);
+
+	void 	makeSound() const;
+
 };
 
 #endif
