@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:13 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/05 17:10:54 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/05 15:18:46 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,4 @@ virtual void 	makeSound() const;
 };
 
 std::ostream &operator<<(std::ostream &os, Animal const &rhs);
-
-// implementer le wrong cat et wrong animal sans virutal pour que le comportement 
-// du wrong cat soit celui du wrong animal
 #endif
-
