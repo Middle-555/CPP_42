@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 13:50:06 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/06 14:00:23 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:01:19 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 wrongCat::	wrongCat()
 {
+	
 	std::cout << "wrongCat Default constructor called" << std::endl;
 	this->_type = "wrongCat";
 	return ;

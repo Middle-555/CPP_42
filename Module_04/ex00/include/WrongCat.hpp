@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 13:49:47 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/06 13:54:13 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/06 18:53:35 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class wrongCat : public wrongAnimal
 {
 protected:
-	std::string _type;
+
 public:
 	wrongCat();
 	~wrongCat();
@@ -31,6 +31,5 @@ public:
 	void 	makeSound() const;
 
 };
-std::ostream &operator<<(std::ostream &os, wrongCat const &rhs);
 
 #endif

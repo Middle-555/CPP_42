@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:03:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/06 17:06:56 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/06 19:24:06 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main()
 	std::cout << "find type" << std::endl;
 	std::cout << human->getType() << " " << std::endl;
 	std::cout << miaou->getType() << " " << std::endl;
-	std::cout << cat->getType() << " " << std::endl; // le type devrait etre cat mais il est en animal.
+	std::cout << cat->getType() << " " << std::endl;
 	std::cout << "test makeSound" << std::endl;
 	human->makeSound();
 	miaou->makeSound();
