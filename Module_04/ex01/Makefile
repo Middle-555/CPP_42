@@ -6,7 +6,7 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/04 16:54:53 by kpourcel          #+#    #+#              #
-#    Updated: 2025/02/06 19:28:49 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/02/07 14:56:30 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CXX         = c++
 CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -I include
 
 # Sources & Objets
-SRCS        = src/main.cpp src/Animal.cpp src/Dog.cpp  src/Cat.cpp src/WrongAnimal.cpp src/WrongCat.cpp
+SRCS        = src/main.cpp src/Animal.cpp src/Dog.cpp  src/Cat.cpp \
+		src/WrongAnimal.cpp src/WrongCat.cpp src/Brain.cpp
 OBJS        = $(SRCS:.cpp=.o)
 
 # Règle par défaut

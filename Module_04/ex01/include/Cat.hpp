@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:29 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/06 13:53:05 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/07 14:55:38 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@
 #include <string>
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-
+class Brain;
 class Cat : public Animal 
 {
+private :
+	Brain*	brain;
 protected:
 
 public:

@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:03:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/06 19:24:06 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:09:10 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,27 @@
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+#include "Brain.hpp"
 
 int main()
 {
-	// test sur les classes Animal + dog et cat
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << "find type" << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << "test makeSound" << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
-	delete(i);
-	delete(j);
-	delete(meta);
-	// test sur les wrong
-	std::cout << "test wrongClass" << std::endl;
-	const wrongAnimal *human = new wrongAnimal();
-	const wrongAnimal *miaou = new wrongCat();
-	const wrongCat	*cat = new wrongCat();
-	std::cout << "find type" << std::endl;
-	std::cout << human->getType() << " " << std::endl;
-	std::cout << miaou->getType() << " " << std::endl;
-	std::cout << cat->getType() << " " << std::endl;
-	std::cout << "test makeSound" << std::endl;
-	human->makeSound();
-	miaou->makeSound();
-	cat->makeSound();
+	const int size = 10;
 	
-	delete(cat);
-	delete(miaou);
-	delete(human);
+	Animal*	animals[size];
+	Brain	myBrain;
 
+	myBrain.setIdea(0, "Test de l'idea");
+	std::cout << "Idea 0 : " << myBrain.getIdea(0) << std::endl;
+	std::cout << "Idea 1 : " << myBrain.getIdea(1) << std::endl;
+	std::cout << "Idea 230 : " << myBrain.getIdea(230) << std::endl;
+
+	for (int i = 0; i < size / 2; i++)
+		animals[i] = new Dog();
+	for (int i = size / 2; i < size; i++)
+		animals[i] = new Cat();
+	for (int i = 0; i < size ; i++)
+		animals[i]->makeSound();
+	for (int i = 0; i < size ; i++)
+		delete(animals[i]);
+	return (0);
 }
