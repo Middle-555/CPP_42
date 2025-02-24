@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 17:04:13 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/24 15:43:04 by kpourcel         ###   ########.fr       */
+/*   Created: 2025/02/04 17:04:36 by kpourcel          #+#    #+#             */
+/*   Updated: 2025/02/07 14:55:14 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 #include <string>
 #include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Animal
+class Brain;
+class Dog : public Animal
 {
 private:
-
+	Brain*	brain;
 protected :
-	std::string _type;
-public:
-//forme cano
-	Animal();
-	virtual ~Animal();
-	Animal(Animal const &other);
-	Animal & operator=(Animal const &other);
 
-// Getters
-std::string  const &getType() const;
-// Fonction membre standard 
-virtual void 	makeSound() const;
+public:
+	virtual ~Dog();
+	Dog();
+	Dog(Dog const &other);
+	Dog & operator=(Dog const &other);
+	void	makeSound() const;
 };
-std::ostream &operator<<(std::ostream &os, Animal const &rhs);
 
 #endif
-

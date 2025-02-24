@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 17:04:13 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/24 15:43:04 by kpourcel         ###   ########.fr       */
+/*   Created: 2025/02/06 13:49:47 by kpourcel          #+#    #+#             */
+/*   Updated: 2025/02/06 18:53:35 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+
+#ifndef WRONG_CAT_HPP
+# define  WRONG_CAT_HPP
 
 #include <string>
 #include <iostream>
+#include "WrongAnimal.hpp"
 
-class Animal
+class wrongCat : public wrongAnimal
 {
-private:
+protected:
 
-protected :
-	std::string _type;
 public:
-//forme cano
-	Animal();
-	virtual ~Animal();
-	Animal(Animal const &other);
-	Animal & operator=(Animal const &other);
+	wrongCat();
+	~wrongCat();
+	wrongCat(wrongCat const &other);
+	wrongCat & operator=(wrongCat const &other);
 
-// Getters
-std::string  const &getType() const;
-// Fonction membre standard 
-virtual void 	makeSound() const;
+	void 	makeSound() const;
+
 };
-std::ostream &operator<<(std::ostream &os, Animal const &rhs);
 
 #endif
-

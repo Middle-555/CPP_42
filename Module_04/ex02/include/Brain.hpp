@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 17:04:13 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/24 15:43:04 by kpourcel         ###   ########.fr       */
+/*   Created: 2025/02/07 14:00:10 by kpourcel          #+#    #+#             */
+/*   Updated: 2025/02/07 14:54:41 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 #include <string>
 #include <iostream>
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-class Animal
+class Brain
 {
 private:
-
+	std::string	ideas[100];
 protected :
-	std::string _type;
 public:
-//forme cano
-	Animal();
-	virtual ~Animal();
-	Animal(Animal const &other);
-	Animal & operator=(Animal const &other);
+// forme cano
+	Brain();
+	~Brain();
+	Brain(const Brain& others);
+	Brain& operator=(const Brain& others);
+// Getters et setters :
+std::string	getIdea(int index) const;
+void		setIdea(int index, const std::string& idea);
 
-// Getters
-std::string  const &getType() const;
-// Fonction membre standard 
-virtual void 	makeSound() const;
 };
-std::ostream &operator<<(std::ostream &os, Animal const &rhs);
 
 #endif
-
