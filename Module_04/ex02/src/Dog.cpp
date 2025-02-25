@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:43 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/07 14:53:58 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/25 14:58:29 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 #include "Dog.hpp"
 
@@ -29,7 +29,7 @@ Dog :: ~Dog()
 	return ;
 }
 
-Dog:: Dog(Dog const &other) : Animal(other)
+Dog:: Dog(Dog const &other) : AAnimal(other)
 {
 	std::cout << "Default Dog copy called" << std::endl;
 	this->brain = new Brain(*other.brain);
@@ -40,7 +40,7 @@ Dog &Dog :: operator=(const Dog &other)
 	std::cout << "Dog Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
-		Animal::operator=(other); // copie l'heritage
+		AAnimal::operator=(other); // copie l'heritage
 		delete(this->brain);
 		this->brain = new Brain(*other.brain);
 	}

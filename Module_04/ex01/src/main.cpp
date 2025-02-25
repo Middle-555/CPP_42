@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:03:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/07 15:09:10 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/25 15:24:26 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ int main()
 	
 	Animal*	animals[size];
 	Brain	myBrain;
+	Animal* Animaltest;
+
+	Animaltest = new Animal;
+	std::cout <<"test animal standard"<< std::endl;
+	Animaltest->makeSound();
 
 	myBrain.setIdea(0, "Test de l'idea");
 	std::cout << "Idea 0 : " << myBrain.getIdea(0) << std::endl;

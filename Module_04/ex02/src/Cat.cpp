@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:05:17 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/24 17:37:24 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/25 14:58:40 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 #include "Cat.hpp"
 
@@ -28,7 +28,7 @@ Cat::	~Cat()
 	return ;
 }
 
-Cat::	Cat(Cat const &other) : Animal(other)
+Cat::	Cat(Cat const &other) : AAnimal(other)
 {
 	std::cout << "Default Cat Copy Called" << std::endl;
 	this->brain = new Brain(*other.brain); // copie profonde
@@ -39,7 +39,7 @@ Cat &Cat :: operator=(Cat const &other)
 	std::cout << "Cat Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
-		Animal::operator=(other); // copie l'heritage
+		AAnimal::operator=(other); // copie l'heritage
 		delete(this->brain);
 		this->brain = new Brain(*other.brain);
 	}
