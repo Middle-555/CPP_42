@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:36 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/07 14:55:14 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/25 14:54:12 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 #include <string>
 #include <iostream>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
 class Brain;
-class Dog : public Animal
+class Dog : public AAnimal
 {
 private:
 	Brain*	brain;

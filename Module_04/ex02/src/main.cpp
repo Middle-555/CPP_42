@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:03:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/07 15:09:10 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/02/25 15:05:50 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
@@ -21,7 +21,7 @@ int main()
 {
 	const int size = 10;
 	
-	Animal*	animals[size];
+	AAnimal*	animals[size];
 	Brain	myBrain;
 
 	myBrain.setIdea(0, "Test de l'idea");
