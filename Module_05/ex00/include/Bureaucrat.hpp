@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:51 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/18 14:34:02 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/24 15:16:16 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ public:
 
 	std::string	getName() const;
 	int	getGrade() const;
-
-	Bureaucrat setGrade(int	grade);
 
 	void	incrementGrade();
 	void	decrementGrade();
