@@ -6,48 +6,42 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:30 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/24 17:12:41 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/24 19:07:55 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-int main() 
+int main()
 {
-    try 
-    {
-        Bureaucrat b1("Jean", 151);
-        std::cout << b1 << std::endl;
-    }
-    catch (std::exception const &e) 
-    {
-        std::cerr << "Erreur à la création de b1 : " << e.what() << std::endl;
-    }
-    try 
-    {
-        Bureaucrat b2("Lucie", 1);
-        std::cout << b2 << std::endl;
+	try 
+	{
+		Bureaucrat b("Alice", 42);
+		Form f("Formulaire A-42", 50, 10);
 
-        std::cout << "On essaie d'incrémenter (passer au-dessus du grade max)..." << std::endl;
-        b2.incrementGrade();
-        std::cout << b2 << std::endl;
-    }
-    catch (std::exception const &e) 
-    {
-        std::cerr << "Erreur pendant l'incrémentation : " << e.what() << std::endl;
-    }
-    try 
-    {
-        Bureaucrat b3("Paul", 150);
-        std::cout << b3 << std::endl;
+		std::cout << b << std::endl;
+		std::cout << f << std::endl;
 
-        std::cout << "On essaie de décrémenter (passer en-dessous du grade min)..." << std::endl;
-        b3.decrementGrade();
-        std::cout << b3 << std::endl;
-    }
-    catch (std::exception const &e) 
-    {
-        std::cerr << "Erreur pendant la décrémentation : " << e.what() << std::endl;
-    }
-    return 0;
+		b.signForm(f);
+
+		std::cout << f << std::endl;
+	}
+	catch (std::exception const &e) 
+	{
+		std::cerr << "Erreur générale : " << e.what() << std::endl;
+	}
+	std::cout << "\n======================\n\n";
+	try 
+	{
+		Bureaucrat b2("Bob", 100);
+		Form f2("Formulaire UltraSecret", 50, 10);
+
+		b2.signForm(f2);
+	}
+	catch (std::exception const &e) 
+	{
+		std::cerr << "Erreur générale : " << e.what() << std::endl;
+	}
+	return 0;
 }
