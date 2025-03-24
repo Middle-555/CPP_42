@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/24 16:58:29 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:07:55 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,8 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 	return "Le grade est trop bas ! Il doit être entre 1 et 150.";
 }
 
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
+{
+	os << b.getName() << ", bureaucrat grade " << b.getGrade();
+	return os;
+}

@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:51 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/24 15:16:16 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:07:44 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ public:
 
 	void	incrementGrade();
 	void	decrementGrade();
-
 	class GradeTooHighException : public std::exception 
 	{
    	public:
@@ -43,5 +42,7 @@ public:
         virtual const char* what() const throw();
 	};
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
 
 #endif
