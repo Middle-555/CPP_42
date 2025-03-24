@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:30:06 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/13 21:28:21 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/24 16:59:30 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,38 @@ PhoneBook::~PhoneBook()
 	std::cout<< "Repertory Closed" << std::endl;
 }
 
-std::string	PhoneBook::validateNotEmpty(const std::string &field_name)
+std::string PhoneBook::validateNotEmpty(const std::string &field_name)
 {
-	std::string	input;
+    std::string input;
 
-	while (input.empty())
-	{
-		std::cout << "Enter " << field_name
-			<< ":" << std::endl;
-		std::getline(std::cin, input);
-		if (input.empty())
-			std::cout << "Error: This field"
-				<< " cannot be empty."
-				<< std::endl;
-	}
-	return (input);
+    while (true)
+    {
+        std::cout << "Enter " << field_name << ": " << std::endl;
+        std::getline(std::cin, input);
+        if (input.empty())
+        {
+            std::cout << "Error: This field cannot be empty." << std::endl;
+            continue;
+        }
+        bool onlySpaces = true;
+        for (size_t i = 0; i < input.size(); i++)
+        {
+            if (!std::isspace(static_cast<unsigned char>(input[i])))
+            {
+                onlySpaces = false;
+                break;
+            }
+        }
+        if (onlySpaces)
+        {
+            std::cout << "Error: This field cannot contain only spaces." << std::endl;
+            continue;
+        }
+        break;
+    }
+    return input;
 }
+
 
 std::string	PhoneBook::validatePhoneNumber(void)
 {
