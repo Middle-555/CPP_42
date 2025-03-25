@@ -6,12 +6,12 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 00:15:24 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/05 16:01:41 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:34:00 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+#include "../include/ClapTrap.hpp"
+#include "../include/FragTrap.hpp"
 
 FragTrap:: FragTrap() 
 {

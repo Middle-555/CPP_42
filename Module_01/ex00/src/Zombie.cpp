@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:17:18 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/17 14:46:57 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:35:34 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "../include/Zombie.hpp"
 
 void	Zombie::announce(void)
 {

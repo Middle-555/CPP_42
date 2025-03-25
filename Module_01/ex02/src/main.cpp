@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:21:18 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/21 14:35:49 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:35:54 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "brain.hpp"
+#include "../include/brain.hpp"
 
 brain::	brain(void)
 {

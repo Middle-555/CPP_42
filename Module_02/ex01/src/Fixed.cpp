@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 20:26:48 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/31 12:06:38 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:34:39 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../include/Fixed.hpp"
 
 Fixed::	Fixed()
 {

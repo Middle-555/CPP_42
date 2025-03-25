@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 13:50:06 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/06 18:01:19 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:33:15 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "../include/WrongCat.hpp"
 
 wrongCat::	wrongCat()
 {

@@ -6,16 +6,16 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:03:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/25 15:05:50 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:33:09 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-#include "Brain.hpp"
+#include "../include/AAnimal.hpp"
+#include "../include/Cat.hpp"
+#include "../include/Dog.hpp"
+#include "../include/WrongAnimal.hpp"
+#include "../include/WrongCat.hpp"
+#include "../include/Brain.hpp"
 
 int main()
 {

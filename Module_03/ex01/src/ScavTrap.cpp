@@ -6,12 +6,12 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:01:12 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/05 16:01:58 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:33:50 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "../include/ClapTrap.hpp"
+#include "../include/ScavTrap.hpp"
 
 
 ScavTrap::	ScavTrap()

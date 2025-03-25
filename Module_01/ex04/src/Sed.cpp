@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 22:06:12 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/23 17:49:46 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:36:23 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#include "../include/Sed.hpp"
 
 Sed::	Sed()
 {

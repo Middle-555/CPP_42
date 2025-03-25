@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:09:20 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/03 14:54:36 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:33:37 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "../include/ClapTrap.hpp"
 
 int main(void)
 {

@@ -6,13 +6,13 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:53:50 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/21 17:06:12 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:36:09 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "../include/Weapon.hpp"
+#include "../include/HumanA.hpp"
+#include "../include/HumanB.hpp"
 
 int	main()
 {

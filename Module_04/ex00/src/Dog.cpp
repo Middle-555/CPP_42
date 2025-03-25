@@ -6,12 +6,12 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:43 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/05 16:04:44 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:32:18 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
+#include "../include/Animal.hpp"
+#include "../include/Dog.hpp"
 
 
 Dog::	Dog()

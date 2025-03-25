@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:54:13 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/21 17:19:01 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:36:03 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "../include/HumanB.hpp"
 
 HumanB::HumanB(std::string name) : _name(name), _weapon(NULL)
 {

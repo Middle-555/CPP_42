@@ -6,13 +6,13 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:05:17 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/25 14:58:40 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:32:57 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Brain.hpp"
-#include "Cat.hpp"
+#include "../include/AAnimal.hpp"
+#include "../include/Brain.hpp"
+#include "../include/Cat.hpp"
 
 Cat::	Cat()
 {

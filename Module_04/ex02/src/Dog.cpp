@@ -6,13 +6,13 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:43 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/25 14:58:29 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:33:01 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Brain.hpp"
-#include "Dog.hpp"
+#include "../include/AAnimal.hpp"
+#include "../include/Brain.hpp"
+#include "../include/Dog.hpp"
 
 Dog::	Dog()
 {

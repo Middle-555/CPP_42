@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:21 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/25 14:56:10 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:32:51 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
+#include "../include/AAnimal.hpp"
 
 AAnimal::	AAnimal()
 {

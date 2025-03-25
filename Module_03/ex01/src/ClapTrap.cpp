@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:09:31 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/03 18:43:29 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:33:44 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "../include/ClapTrap.hpp"
 
 
 ClapTrap::ClapTrap()

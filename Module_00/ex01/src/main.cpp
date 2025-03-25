@@ -6,13 +6,13 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:30:26 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/21 17:25:24 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:38:29 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
+#include "../include/main.hpp"
+#include "../include/Contact.hpp"
+#include "../include/PhoneBook.hpp"
 
 int	main()
 {

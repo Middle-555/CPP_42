@@ -6,13 +6,13 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:30:06 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/24 16:59:30 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:38:35 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
+#include "../include/main.hpp"
+#include "../include/Contact.hpp"
+#include "../include/PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
 {
