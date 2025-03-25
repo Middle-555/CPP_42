@@ -6,46 +6,47 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/30 15:18:22 by kpourcel          #+#    #+#              #
-#    Updated: 2025/01/13 21:25:16 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/03/25 16:20:19 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Compiler
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -I./include
 
-# Répertoires
-SRCDIR = ./src
-INCDIR = ./include
-OBJDIR = ./obj
+NAME		=	Phonebook
 
-# Fichiers
-SRC = $(SRCDIR)/main.cpp $(SRCDIR)/PhoneBook.cpp $(SRCDIR)/Contact.cpp
-OBJ = $(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
-NAME = phonebook
+CXX		=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-# Règles
+SRC_DIR		=	src
+INC_DIR		=	include
+
+SRCS		=	$(wildcard $(SRC_DIR)/*.cpp)
+OBJS		=	$(SRCS:.cpp=.o)
+
+INCLUDES	=	-I$(INC_DIR)
+
+# ----------------------------------
+
 all: $(NAME)
 
-# Création de l'exécutable
-$(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
+$(NAME): $(OBJS)
+	@echo "🔧 Linking executable '$(NAME)'..."
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $^
 
-# Compilation des fichiers objets
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
-	@mkdir -p $(OBJDIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+%.o: %.cpp
+	@echo "🛠️  Compilation de $<"
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
-# Nettoyage des fichiers objets
 clean:
-	@rm -rf $(OBJDIR)
+	@echo "🧹 Suppression des fichiers objets..."
+	@rm -f $(OBJS)
 
-# Nettoyage complet
 fclean: clean
+	@echo "🧨 Suppression de l’exécutable '$(NAME)'..."
 	@rm -f $(NAME)
 
-# Recompiler entièrement
-re: fclean all
+re:
+	@echo "🔁 Recompilation complète..."
+	@$(MAKE) fclean
+	@$(MAKE) all
 
-# Ignorer les fichiers spécifiques
 .PHONY: all clean fclean re

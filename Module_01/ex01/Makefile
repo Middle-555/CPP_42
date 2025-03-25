@@ -6,56 +6,47 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/17 14:48:39 by kpourcel          #+#    #+#              #
-#    Updated: 2025/01/20 14:58:01 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/03/25 16:22:15 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Nom de l'exécutable
-NAME = zombie_horde
 
-# Compilateur
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+NAME		=	Zombie_Horde
 
-# Dossiers
-SRC_DIR = src
-INC_DIR = include
-OBJ_DIR = obj
+CXX		=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-# Fichiers sources
-SRCS =	$(SRC_DIR)/main.cpp \
-	$(SRC_DIR)/zombieHorde.cpp \
-	$(SRC_DIR)/Zombie.cpp \
+SRC_DIR		=	src
+INC_DIR		=	include
 
-# Génération des fichiers objets
-OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+SRCS		=	$(wildcard $(SRC_DIR)/*.cpp)
+OBJS		=	$(SRCS:.cpp=.o)
 
-# Commande de compilation
+INCLUDES	=	-I$(INC_DIR)
+
+# ----------------------------------
+
+all: $(NAME)
+
 $(NAME): $(OBJS)
-	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-	@echo "✅ Compilation terminée ! Exécutable : $(NAME)"
+	@echo "🔧 Linking executable '$(NAME)'..."
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $^
 
-# Compilation des fichiers objets
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
-	@$(CXX) $(CXXFLAGS) -I$(INC_DIR) -c $< -o $@
+%.o: %.cpp
 	@echo "🛠️  Compilation de $<"
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
-# Création du dossier obj si nécessaire
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
-
-# Nettoyage des fichiers objets et de l'exécutable
 clean:
-	@rm -rf $(OBJ_DIR)
-	@echo "🧹 Fichiers objets supprimés."
+	@echo "🧹 Suppression des fichiers objets..."
+	@rm -f $(OBJS)
 
 fclean: clean
+	@echo "🧨 Suppression de l’exécutable '$(NAME)'..."
 	@rm -f $(NAME)
-	@echo "🗑️  Exécutable supprimé."
 
-# Recompilation complète
-re: fclean $(NAME)
+re:
+	@echo "🔁 Recompilation complète..."
+	@$(MAKE) fclean
+	@$(MAKE) all
 
-# Empêche Make d'utiliser un fichier appelé "clean" comme cible par défaut
-.PHONY: clean fclean re
- 
+.PHONY: all clean fclean re

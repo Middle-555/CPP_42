@@ -6,41 +6,46 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/04 16:54:53 by kpourcel          #+#    #+#              #
-#    Updated: 2025/02/06 16:59:20 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/03/25 16:27:41 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = Animal
+NNAME		=	Animal
 
-# Compilateur + flags
-CXX         = c++
-CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -I include
+CXX		=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-# Sources & Objets
-SRCS        = src/main.cpp src/Animal.cpp src/Dog.cpp  src/Cat.cpp src/WrongAnimal.cpp src/WrongCat.cpp
-OBJS        = $(SRCS:.cpp=.o)
+SRC_DIR		=	src
+INC_DIR		=	include
 
-# Règle par défaut
+SRCS		=	$(wildcard $(SRC_DIR)/*.cpp)
+OBJS		=	$(SRCS:.cpp=.o)
+
+INCLUDES	=	-I$(INC_DIR)
+
+# ----------------------------------
+
 all: $(NAME)
 
-# Edition de liens (création de l’exécutable)
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	@echo "🔧 Linking executable '$(NAME)'..."
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $^
 
-# Compilation : chaque .o dépend de son .cpp
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@echo "🛠️  Compilation de $<"
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
-# Nettoyage des .o
 clean:
-	rm -f $(OBJS)
+	@echo "🧹 Suppression des fichiers objets..."
+	@rm -f $(OBJS)
 
-# Nettoyage + exécutable
 fclean: clean
-	rm -f $(NAME)
+	@echo "🧨 Suppression de l’exécutable '$(NAME)'..."
+	@rm -f $(NAME)
 
-# Rebuild complet
-re: fclean all
+re:
+	@echo "🔁 Recompilation complète..."
+	@$(MAKE) fclean
+	@$(MAKE) all
 
-# Pour éviter les conflits avec des fichiers nommés "clean", "fclean", etc.
 .PHONY: all clean fclean re

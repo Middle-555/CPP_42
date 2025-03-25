@@ -6,40 +6,46 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/23 17:54:31 by kpourcel          #+#    #+#              #
-#    Updated: 2025/01/23 18:08:05 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/03/25 16:25:10 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Variables
-CXX      = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude
-NAME     = harl
-SRCDIR   = src
-INCDIR   = include
-SRCS     = $(SRCDIR)/main.cpp $(SRCDIR)/Harl.cpp
-OBJS     = $(SRCS:.cpp=.o)
+NAME		=	Harl
 
-# Règle principale
+CXX		=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+
+SRC_DIR		=	src
+INC_DIR		=	include
+
+SRCS		=	$(wildcard $(SRC_DIR)/*.cpp)
+OBJS		=	$(SRCS:.cpp=.o)
+
+INCLUDES	=	-I$(INC_DIR)
+
+# ----------------------------------
+
 all: $(NAME)
 
-# Compilation de l'exécutable
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	@echo "🔧 Linking executable '$(NAME)'..."
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $^
 
-# Compilation des fichiers .cpp en .o
-$(SRCDIR)/%.o: $(SRCDIR)/%.cpp $(INCDIR)/Harl.hpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+%.o: %.cpp
+	@echo "🛠️  Compilation de $<"
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
-# Nettoyage des fichiers objets
 clean:
-	rm -f $(OBJS)
+	@echo "🧹 Suppression des fichiers objets..."
+	@rm -f $(OBJS)
 
-# Nettoyage complet + suppression de l'exécutable
 fclean: clean
-	rm -f $(NAME)
+	@echo "🧨 Suppression de l’exécutable '$(NAME)'..."
+	@rm -f $(NAME)
 
-# Recompile proprement
-re: fclean all
+re:
+	@echo "🔁 Recompilation complète..."
+	@$(MAKE) fclean
+	@$(MAKE) all
 
-# Évite les erreurs si les fichiers/règles n'existent pas
 .PHONY: all clean fclean re

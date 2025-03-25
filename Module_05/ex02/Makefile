@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/17 13:58:16 by kpourcel          #+#    #+#              #
-#    Updated: 2025/03/25 16:21:15 by kpourcel         ###   ########.fr        #
+#    Created: 2025/03/18 13:28:14 by kpourcel          #+#    #+#              #
+#    Updated: 2025/03/25 16:29:10 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Zombie
+NAME		=	Bureaucrat
 
 CXX		=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98

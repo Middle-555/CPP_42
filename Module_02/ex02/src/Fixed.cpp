@@ -6,40 +6,33 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:22:08 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/01 20:04:36 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 14:59:35 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::	Fixed()
+Fixed::	Fixed() : _fixedValue(0)
 {
-	std::cout << "Default constructor called" << std::endl;
-	return ;
 }
 
 Fixed::	Fixed(const int n)
 {
-	std::cout << "Int constructor called" << std::endl;
 	this->_fixedValue = n * (1 <<_fixedBits);
 	return ;
 }
 Fixed::	Fixed(const float f)
 {
-	std::cout << "Float constructor called" << std::endl;
 	this->_fixedValue = static_cast<int>(roundf(f * (1 << _fixedBits)));
 	return ;
 }
 
 Fixed::	~Fixed()
 {
-	std::cout << "Default destructor called" << std::endl;
-	return ;
 }
 
 Fixed &Fixed ::operator=(Fixed const &other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 		this->_fixedValue = other.getRawBits();
 	return (*this);
@@ -47,7 +40,6 @@ Fixed &Fixed ::operator=(Fixed const &other)
 
 Fixed::	Fixed ( Fixed const &other)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 

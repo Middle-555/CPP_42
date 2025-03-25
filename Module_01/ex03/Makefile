@@ -6,39 +6,47 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/21 14:52:42 by kpourcel          #+#    #+#              #
-#    Updated: 2025/01/21 17:00:42 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/03/25 16:24:35 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Variables
-NAME = violence
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude
-SRCS = src/main.cpp src/Weapon.cpp src/HumanA.cpp src/HumanB.cpp
-OBJS = $(SRCS:.cpp=.o)
+NAME		=	Violence
 
-# Règles
+CXX		=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+
+SRC_DIR		=	src
+INC_DIR		=	include
+
+SRCS		=	$(wildcard $(SRC_DIR)/*.cpp)
+OBJS		=	$(SRCS:.cpp=.o)
+
+INCLUDES	=	-I$(INC_DIR)
+
+# ----------------------------------
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-	@echo "Compilation terminée : $(NAME) créé."
+	@echo "🔧 Linking executable '$(NAME)'..."
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $^
 
-src/%.o: src/%.cpp
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
-	@echo "Compilation de $< terminée."
+%.o: %.cpp
+	@echo "🛠️  Compilation de $<"
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
+	@echo "🧹 Suppression des fichiers objets..."
 	@rm -f $(OBJS)
-	@echo "Fichiers objets supprimés."
 
 fclean: clean
+	@echo "🧨 Suppression de l’exécutable '$(NAME)'..."
 	@rm -f $(NAME)
-	@echo "Exécutable $(NAME) supprimé."
 
-re: fclean all
+re:
+	@echo "🔁 Recompilation complète..."
+	@$(MAKE) fclean
+	@$(MAKE) all
 
-run: all
-	@./$(NAME)
+.PHONY: all clean fclean re
 
-.PHONY: all clean fclean re run
