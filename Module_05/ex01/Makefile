@@ -6,38 +6,75 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/18 13:28:14 by kpourcel          #+#    #+#              #
-#    Updated: 2025/03/25 14:25:31 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/03/26 12:20:24 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	bureaucrat
+NAME		=	Bureaucrat
 
 CXX		=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRC_DIR		=	src
 INC_DIR		=	include
+OBJ_DIR		=	obj
 
-SRC_FILES	=	main.cpp Bureaucrat.cpp Form.cpp
-SRCS		=	$(addprefix $(SRC_DIR)/, $(SRC_FILES))
-OBJS		=	$(SRCS:.cpp=.o)
+SRCS		=	$(wildcard $(SRC_DIR)/*.cpp)
+OBJS		=	$(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRCS))
 
 INCLUDES	=	-I$(INC_DIR)
 
+HEADER		=	"📦 Compilation du projet $(NAME)"
+LINE		=	"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# ------------------------------------------------------------------
+
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(NAME) $(OBJS)
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+$(NAME): $(OBJ_DIR) $(OBJS)
+	@echo ""
+	@echo "$(LINE)"
+	@echo "$(HEADER)"
+	@echo "$(LINE)"
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $(OBJS)
+	@echo "✅ Compilation terminée."
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@echo "🛠️  Compilation de $<"
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	@echo "🧹 Suppression des fichiers objets et du dossier obj/..."
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "🧨 Suppression de l’exécutable '$(NAME)'..."
+	@rm -f $(NAME)
 
-re: fclean all
+re:
+	@echo "🔁 Recompilation complète..."
+	@$(MAKE) fclean
+	@$(MAKE) all
 
-.PHONY: all clean fclean re
+run: all
+	@echo "🚀 Lancement de $(NAME)..."
+	@./$(NAME)
+
+valgrind: all
+	@echo "🧠 Lancement avec valgrind..."
+	@valgrind --leak-check=full ./$(NAME)
+
+help:
+	@echo "🛠️  Liste des commandes disponibles :"
+	@echo "  make         : Compile le projet"
+	@echo "  make run     : Compile et exécute le programme"
+	@echo "  make clean   : Supprime les fichiers objets"
+	@echo "  make fclean  : Supprime les fichiers objets + exécutable"
+	@echo "  make re      : Recompile tout"
+	@echo "  make valgrind: Lance le programme avec valgrind"
+	@echo "  make help    : Affiche cette aide"
+
+.PHONY: all clean fclean re run valgrind help

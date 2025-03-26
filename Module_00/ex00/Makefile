@@ -6,39 +6,50 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/30 15:07:13 by kpourcel          #+#    #+#              #
-#    Updated: 2025/03/25 16:19:01 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/03/26 12:16:58 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME		=	megaphone
+NAME		=	Megaphone
 
 CXX		=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRC_DIR		=	src
 INC_DIR		=	include
+OBJ_DIR		=	obj
 
 SRCS		=	$(wildcard $(SRC_DIR)/*.cpp)
-OBJS		=	$(SRCS:.cpp=.o)
+OBJS		=	$(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRCS))
 
 INCLUDES	=	-I$(INC_DIR)
 
-# ----------------------------------
+HEADER		=	"📦 Compilation du projet $(NAME)"
+LINE		=	"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# ------------------------------------------------------------------
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@echo "🔧 Linking executable '$(NAME)'..."
-	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $^
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
-%.o: %.cpp
+$(NAME): $(OBJ_DIR) $(OBJS)
+	@echo ""
+	@echo "$(LINE)"
+	@echo "$(HEADER)"
+	@echo "$(LINE)"
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $(OBJS)
+	@echo "✅ Compilation terminée."
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@echo "🛠️  Compilation de $<"
 	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	@echo "🧹 Suppression des fichiers objets..."
-	@rm -f $(OBJS)
+	@echo "🧹 Suppression des fichiers objets et du dossier obj/..."
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@echo "🧨 Suppression de l’exécutable '$(NAME)'..."
@@ -49,4 +60,22 @@ re:
 	@$(MAKE) fclean
 	@$(MAKE) all
 
-.PHONY: all clean fclean re
+run: all
+	@echo "🚀 Lancement de $(NAME)..."
+	@./$(NAME)
+
+valgrind: all
+	@echo "🧠 Lancement avec valgrind..."
+	@valgrind --leak-check=full ./$(NAME)
+
+help:
+	@echo "🛠️  Liste des commandes disponibles :"
+	@echo "  make         : Compile le projet"
+	@echo "  make run     : Compile et exécute le programme"
+	@echo "  make clean   : Supprime les fichiers objets"
+	@echo "  make fclean  : Supprime les fichiers objets + exécutable"
+	@echo "  make re      : Recompile tout"
+	@echo "  make valgrind: Lance le programme avec valgrind"
+	@echo "  make help    : Affiche cette aide"
+
+.PHONY: all clean fclean re run valgrind help

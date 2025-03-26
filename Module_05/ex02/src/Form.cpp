@@ -6,12 +6,12 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:16:35 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/24 18:57:16 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:38:54 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+#include "../include/Form.hpp"
+#include "../include/Bureaucrat.hpp"
 
 Form::Form(std::string name, int gradeToSign, int gradeToExec) : _name(name), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
 {
@@ -49,7 +49,6 @@ void 	Form:: beSigned(Bureaucrat const &bureaucrat)
 bool Form::isSigned() const {
 	return _signed;
 }
-
 
 const char* Form::GradeTooHighException::what() const throw() 
 {
