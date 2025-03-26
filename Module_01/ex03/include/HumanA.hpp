@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:53:39 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/21 16:53:34 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/26 13:15:53 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class HumanA
 {
 private:
 	std::string	_name;
-	Weapon &_weapon; // référence a l'arme. 
+	Weapon &_weapon;
 public:
 	HumanA(std:: string name, Weapon &_weapon);
 	~HumanA();
