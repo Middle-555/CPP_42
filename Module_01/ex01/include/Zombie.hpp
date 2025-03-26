@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:49:54 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/01/20 14:48:15 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/26 12:58:28 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 class Zombie
 {
 private:
-	std::string	name;
+	std::string	_name;
 public:
  	Zombie();
 	~Zombie();
 
-	void	announce(void);
-	void	setName(std::string name);
+	void		announce(void);
+	void		setName(std::string name);
+	std::string	getName() const;
 	
 };
 Zombie* zombieHorde(int N, std::string name);
