@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:09:14 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/03 14:29:37 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/28 10:59:42 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	ClapTrap();
 	~ClapTrap();
 	ClapTrap(const std::string &name);
-	ClapTrap ( ClapTrap const &other);
+	ClapTrap(ClapTrap const &other);
 	ClapTrap & operator=(ClapTrap const &other);
 	
 // Fonction membre du projet
