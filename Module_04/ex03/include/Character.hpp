@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 13:53:02 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/29 16:17:29 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 16:53:39 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 # define	CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public ICharacter
 {
 private:
 	AMateria*	_inventory[4];
-	int		_idx;
+	//int		_idx;
 	std::string	_name;
 public:
 	Character(std::string const &name);

@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 13:58:19 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/29 16:30:47 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 16:59:34 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Character::Character(std::string const &name) : _name(name)
 {
-	std::cout << "Character Constructor Called" << std::endl;
+	//std::cout << "Character Constructor Called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 	return ;
@@ -22,20 +22,19 @@ Character::Character(std::string const &name) : _name(name)
 
 Character::~Character()
 {
-	std::cout << "Character Destructor Called" << std::endl;
+	//std::cout << "Character Destructor Called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (_inventory[i])
 			delete _inventory[i];
 	}
-	std::cout << "Character " << _name << " destroyed" << std::endl;
+	//std::cout << "Character " << _name << " destroyed" << std::endl;
 	return ;
 }
 
 Character::Character(Character const &other)
 {
-	std::cout << "Character Copy Constructor Called" << std::endl;
-
+	//std::cout << "Character Copy Constructor Called" << std::endl;
 	this->_name = other._name;
 
 	for (int i = 0; i < 4; i++)
@@ -88,7 +87,7 @@ void Character::equip(AMateria* m)
 			return;
 		}
 	}
-	std::cout << "❌ " << _name << "'s inventory is full. Couldn't equip materia." << std::endl;
+	std::cout << "❌ " << _name << "inventory is full. Couldn't equip materia." << std::endl;
 }
 	
 void Character::unequip(int idx) 

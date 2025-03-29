@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 12:14:37 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/29 15:38:40 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 16:52:07 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,5 @@ public:
 	void use(ICharacter& target);
 	
 };
-
-Cure::Cure()
-{
-}
-
-Cure::~Cure()
-{
-}
 
 #endif
