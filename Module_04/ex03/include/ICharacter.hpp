@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 11:55:15 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/29 15:07:20 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 16:13:55 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 class ICharacter
 {
 protected:
-	
 public:
 	ICharacter();
 	virtual ~ICharacter();
