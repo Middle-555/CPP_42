@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 11:50:48 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/29 12:08:51 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 15:09:57 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 #include "ICharacter.hpp"
 
-class AMateria
+class AMateria 
 {
 protected:
 	std::string _type;

@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/29 12:02:31 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/29 14:54:52 by kpourcel         ###   ########.fr       */
+/*   Created: 2025/03/29 13:53:02 by kpourcel          #+#    #+#             */
+/*   Updated: 2025/03/29 15:03:36 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef 	IMATERIASOURCE_HPP
-# define	IMATERIASOURCE_HPP
+#ifndef		CHARACTER_HPP
+# define	CHARACTER_HPP
 
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class IMateriaSource : public AMateria
+class Character : public ICharacter
 {
 private:
-	
+	AMateria*	_inventory[4];
+	int		_idx;
 public:
-	IMateriaSource();
-	virtual ~IMateriaSource();
-
-	virtual void learnMateria(AMateria*) = 0;
-	virtual AMateria* createMateria(std::string const &type) = 0;
+	Character();
+	~Character();
+	Character(Character const &other);
+	Character& operator=(Character const &other);
 };
-
-IMateriaSource::IMateriaSource()
-{
-}
-
-IMateriaSource::~IMateriaSource()
-{
-}
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 12:12:41 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/29 12:14:13 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 15:37:48 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,13 @@ class Ice : public AMateria
 private:
 
 public:
-	Ice(/* args */);
+	Ice();
 	~Ice();
+	Ice(Ice const &other);
+	Ice& operator=(Ice const &other);
+
+	AMateria* clone() const;
+	void use(ICharacter& target);
 };
-
-Ice::Ice(/* args */)
-{
-}
-
-Ice::~Ice()
-{
-}
 
 #endif

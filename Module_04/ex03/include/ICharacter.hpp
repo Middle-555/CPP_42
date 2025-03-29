@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 11:55:15 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/29 12:06:08 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 15:07:20 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 #include <string>
 #include "AMateria.hpp"
-
 
 class ICharacter
 {
@@ -31,14 +30,5 @@ public:
 	virtual void unequip(int idx) = 0;
 	virtual void use(int idx, ICharacter& target) = 0;
 };
-
-ICharacter::ICharacter()
-{
-}
-
-ICharacter::~ICharacter()
-{
-}
-
 
 #endif

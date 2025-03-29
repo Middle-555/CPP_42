@@ -6,8 +6,16 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 12:06:56 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/29 12:07:51 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 15:07:26 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ICharacter.hpp"
+
+ICharacter::ICharacter()
+{
+}
+
+ICharacter::~ICharacter()
+{
+}

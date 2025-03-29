@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 12:14:37 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/29 12:15:32 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 15:38:40 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,19 @@ class AMateria;
 class Cure : public AMateria
 {
 private:
-	/* data */
+
 public:
-	Cure(/* args */);
+	Cure();
 	~Cure();
+	Cure(Cure const &other);
+	Cure& operator=(Cure const &other);
+
+	AMateria* clone() const;
+	void use(ICharacter& target);
+	
 };
 
-Cure::Cure(/* args */)
+Cure::Cure()
 {
 }
 
