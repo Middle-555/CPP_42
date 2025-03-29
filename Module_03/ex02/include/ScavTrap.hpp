@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:00:59 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/28 11:03:40 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 11:06:47 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ public:
 	ScavTrap & operator=(ScavTrap const &other);
 	
 	void guardGate();
+	void	attack(const std::string& target);
+	void	takeDamage(unsigned int amount);
+	void	beRepaired(unsigned int amount);
 };
 
 #endif

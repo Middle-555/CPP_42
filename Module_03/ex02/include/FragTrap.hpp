@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 00:15:14 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/28 11:04:06 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 11:07:28 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ public:
 	FragTrap & operator=(FragTrap const &other);
 // fonction membre
 	void	highFivesGuys(void);
-
+	void	attack(const std::string& target);
+	void	takeDamage(unsigned int amount);
+	void	beRepaired(unsigned int amount);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:01:12 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/25 16:34:08 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 11:32:55 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,63 @@ void	ScavTrap:: guardGate()
 {
 	std ::cout << "ScavTrap "<< this->_name << " is now in Gate Keeper mode" << std::endl;
 	return ;
+}
+
+void	ScavTrap:: attack(const std::string& target)
+{
+	if (_hitPoint <= 0)
+	{
+		std::cout << "❌ You can't attack no hp left ! " << std::endl;
+		return ;
+	}
+	if (_energyPoint <= 0)
+	{
+		std::cout << "❌ You can't attack no energy point !" << std::endl;
+		return ;
+	}
+	_energyPoint--;
+	std::cout << "ScavTrap " << this->_name 
+        << " attacks " << target 
+        << ", causing " << this->_attackDamage 
+        << " points of damage!" << std::endl;
+		
+}
+
+void	ScavTrap:: takeDamage(unsigned int amount)
+{
+	if (_hitPoint == 0)
+	{
+		std::cout << "ScavTrap " << this->_name  << " is already dead" << std::endl;
+		return ;
+	}
+	_hitPoint -= amount;
+	if (_hitPoint <= 0)
+	{
+		_hitPoint = 0;
+		std::cout << "ScavTrap " << this->_name << " as now 0 hp left" << std::endl;
+	}
+		
+	else
+		std::cout << "ScavTrap " << this->_name << " as now " << _hitPoint << " hp left" << std::endl;
+	return ;
+
+}
+
+void	ScavTrap:: beRepaired(unsigned int amount)
+{
+	if (_hitPoint <= 0)
+	{
+		std::cout << "❌ You can't repair no hp left ! " << std::endl;
+		return ;
+	}
+	if (_energyPoint <= 0)
+	{
+		std::cout << "❌ You can't repair no energy point ! " << std::endl;
+		return ;
+	}
+	_energyPoint--;
+	_hitPoint += amount;
+	std::cout << "ScavTrap " << this->_name << " as now " << _hitPoint << " hp left" << std::endl;
+	return ;
+
 }

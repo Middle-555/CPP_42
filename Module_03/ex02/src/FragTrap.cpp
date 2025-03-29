@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 00:15:24 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/25 16:34:00 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/29 11:33:27 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,63 @@ void	FragTrap:: highFivesGuys(void)
 {
 	 std::cout << "FragTrap " << this->getName() << " is asking for a positive high five!" << std::endl;
 	 return ;
+}
+
+void	FragTrap:: attack(const std::string& target)
+{
+	if (_hitPoint <= 0)
+	{
+		std::cout << "❌ You can't attack no hp left ! " << std::endl;
+		return ;
+	}
+	if (_energyPoint <= 0)
+	{
+		std::cout << "❌ You can't attack no energy point !" << std::endl;
+		return ;
+	}
+	_energyPoint--;
+	std::cout << "FragTrap " << this->_name 
+        << " attacks " << target 
+        << ", causing " << this->_attackDamage 
+        << " points of damage!" << std::endl;
+		
+} 
+
+void	FragTrap:: takeDamage(unsigned int amount)
+{
+	if (_hitPoint == 0)
+	{
+		std::cout << "FragTrap " << this->_name  << " is already dead" << std::endl;
+		return ;
+	}
+	_hitPoint -= amount;
+	if (_hitPoint <= 0)
+	{
+		_hitPoint = 0;
+		std::cout << "FragTrap " << this->_name << " as now 0 hp left" << std::endl;
+	}
+		
+	else
+		std::cout << "FragTrap " << this->_name << " as now " << _hitPoint << " hp left" << std::endl;
+	return ;
+
+}
+
+void	FragTrap:: beRepaired(unsigned int amount)
+{
+	if (_hitPoint <= 0)
+	{
+		std::cout << "❌ You can't repair no hp left ! " << std::endl;
+		return ;
+	}
+	if (_energyPoint <= 0)
+	{
+		std::cout << "❌ You can't repair no energy point ! " << std::endl;
+		return ;
+	}
+	_energyPoint--;
+	_hitPoint += amount;
+	std::cout << "FragTrap " << this->_name << " as now " << _hitPoint << " hp left" << std::endl;
+	return ;
+
 }

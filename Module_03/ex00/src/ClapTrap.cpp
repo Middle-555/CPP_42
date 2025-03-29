@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 20:09:31 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/25 16:33:33 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/28 13:42:42 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 	this->setAttackDamage(10);
 	this->setEnergyPoint(10);
 	this->setHitPoint(10);
@@ -22,31 +22,29 @@ ClapTrap::ClapTrap()
 }
 ClapTrap::ClapTrap(const std::string &name) : _name(name)
 {
-	std::cout << "Default parameter constructor called" << std::endl;
+	std::cout << "ClapTrap parameter constructor called" << std::endl;
 	this->setAttackDamage(10);
 	this->setEnergyPoint(10);
 	this->setHitPoint(10);
 	return ;
 }
 
-
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Default destructor called" << std::endl;
+	std::cout << "Claptrap destructor called" << std::endl;
 	return ;
 }
 
-
-ClapTrap::	ClapTrap ( ClapTrap const &other)
+ClapTrap::	ClapTrap (ClapTrap const &other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
 	*this = other;
 }
 
 
 ClapTrap &ClapTrap ::operator=(ClapTrap const &other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		this->_name = other.getName();
@@ -61,12 +59,12 @@ void	ClapTrap:: attack(const std::string& target)
 {
 	if (_hitPoint == 0)
 	{
-		std::cout << "You can't repair no hp left ! " << std::endl;
+		std::cout << "You can't attack no hp left ! " << std::endl;
 		return ;
 	}
 	if (_energyPoint == 0)
 	{
-		std::cout << "You can't attack no energy point !" << std::endl;
+		std::cout << "You can't attack no energy point ! " << std::endl;
 		return ;
 	}
 	else
