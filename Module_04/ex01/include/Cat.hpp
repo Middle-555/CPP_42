@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 17:04:29 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/07 14:55:38 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/30 16:24:38 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Brain;
 class Cat : public Animal 
 {
 private :
-	Brain*	brain;
+	Brain*	_brain;
 protected:
 
 public:
@@ -31,6 +31,9 @@ public:
 	Cat(Cat const &other);
 	Cat & operator=(Cat const &other);
 	void	makeSound() const;
+
+	void setIdea(int index, const std::string& idea);
+	std::string getIdea(int index) const;
 };
 
 #endif

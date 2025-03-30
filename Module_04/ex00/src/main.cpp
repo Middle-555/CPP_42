@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:03:22 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/29 17:32:09 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/30 12:33:51 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int main()
 
 	std::cout << PURPLE << "\n🔊 Sons :\n" << RESET;
 	human->makeSound();   // generic
-	miaou->makeSound();   // ❌ generic (expected miaou)
+	miaou->makeSound();   // generic
 	cat->makeSound();     // ✅ miaou
 
 	std::cout << GRAY << "\n🧹 Suppression wrongAnimal / wrongCat\n" << RESET;

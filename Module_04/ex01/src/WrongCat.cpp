@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 13:50:06 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/02/06 18:01:19 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/30 16:36:44 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "../include/WrongCat.hpp"
 
 wrongCat::	wrongCat()
 {
@@ -40,6 +40,6 @@ wrongCat &wrongCat :: operator=(wrongCat const &other)
 
 void	wrongCat::makeSound() const
 {
-	std::cout << "Miaou" << std::endl;
+	std::cout << "wrongMiaou" << std::endl;
 	return ;
 }
