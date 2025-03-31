@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:15:52 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/24 18:51:32 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/31 16:59:49 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 #include <iostream>
 #include <stdexcept>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
-class Form
+class AForm
 {
 private:
 	const std::string _name;
@@ -26,14 +26,18 @@ private:
 	const int	_gradeToSign;
 	const int	_gradeToExec;
 public:
-	Form(std::string name, int gradeToSign, int gradeToExec);
-	~Form();
+	AForm();
+	AForm(std::string name, int gradeToSign, int gradeToExec);
+	AForm(AForm const &other);
+	AForm& operator=(AForm const &other);
+	virtual ~AForm();
 
 	std::string getName() const;
 	int getGradeToSign() const;
 	int getGradeToExec() const;
 	void beSigned(Bureaucrat const &bureaucrat);
 	bool isSigned() const;
+	virtual void execute(Bureaucrat const & executor) const = 0;
 	class GradeTooHighException : public std::exception 
 	{
 		public:
