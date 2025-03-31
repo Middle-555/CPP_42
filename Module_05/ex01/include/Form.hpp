@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:15:52 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/25 14:32:42 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/31 17:24:21 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ private:
 	const int	_gradeToSign;
 	const int	_gradeToExec;
 public:
-	Form(std::string name, int gradeToSign, int gradeToExec);
+	Form();
+	Form(const std::string &name, int gradeToSign, int gradeToExec);
+	Form(Form const &other);
+	Form& operator=(Form const &other);
 	~Form();
 
 	std::string getName() const;

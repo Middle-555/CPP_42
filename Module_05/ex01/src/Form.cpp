@@ -6,17 +6,37 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:16:35 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/25 16:23:38 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/31 17:25:00 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Form::Form(std::string name, int gradeToSign, int gradeToExec) : _name(name), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
+Form::Form() : _name("DefaultForm"), _signed(false), _gradeToSign(150), _gradeToExec(150) {}
+
+
+Form::Form(const std::string &name, int gradeToSign, int gradeToExec)
+    : _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec) 
 {
-	std::cout << "Form Parameter Constructor Called" << std::endl;
-	_signed = false;
+    if (gradeToSign < 1 || gradeToExec < 1)
+        throw GradeTooHighException();
+    if (gradeToSign > 150 || gradeToExec > 150)
+        throw GradeTooLowException();
+}
+
+Form::Form(const Form &other)
+    : _name(other._name), _signed(other._signed),
+      _gradeToSign(other._gradeToSign), _gradeToExec(other._gradeToExec) {}
+
+
+Form &Form::operator=(const Form &other) 
+{
+    if (this != &other) 
+    {
+        this->_signed = other._signed;
+    }
+    return *this;
 }
 
 Form::~Form()
