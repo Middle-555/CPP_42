@@ -6,12 +6,12 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:30 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/24 19:07:55 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/01 23:07:34 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "../include/Bureaucrat.hpp"
+#include "../include/Form.hpp"
 
 int main()
 {

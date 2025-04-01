@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:15:52 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/31 16:59:49 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/01 23:03:34 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <fstream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -41,15 +42,20 @@ public:
 	class GradeTooHighException : public std::exception 
 	{
 		public:
-		virtual const char* what() const throw();
+			virtual const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception 
 	{
 		public:
-		virtual const char* what() const throw();
+			virtual const char* what() const throw();
+	};
+	class NotSignedException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw();
 	};
 };
 
-std::ostream& operator<<(std::ostream& os, const Form& rhs);
+std::ostream& operator<<(std::ostream& os, const AForm& rhs);
 
 #endif

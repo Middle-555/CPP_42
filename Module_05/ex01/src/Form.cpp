@@ -6,12 +6,12 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:16:35 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/31 17:25:00 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/01 23:07:39 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "../include/Bureaucrat.hpp"
+#include "../include/Form.hpp"
 
 Form::Form() : _name("DefaultForm"), _signed(false), _gradeToSign(150), _gradeToExec(150) {}
 
