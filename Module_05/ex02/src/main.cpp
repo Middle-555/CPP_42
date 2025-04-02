@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:30 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/02 15:53:25 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 17:42:04 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,24 @@
 
 int main()
 {
+	std::srand(std::time(0));
 	std::cout << YELLOW << "=== TEST 1 : Bureaucrat ===" << RESET << std::endl;
-	try {
+	try
+	{
 		Bureaucrat bob("Bob", 3);
 		std::cout << bob << std::endl;
 		bob.incrementGrade();
 		std::cout << bob << std::endl;
 		bob.decrementGrade();
 		std::cout << bob << std::endl;
-	} catch (std::exception &e) {
+	} 
+	catch (std::exception &e) 
+	{
 		std::cerr << RED << e.what() << RESET << std::endl;
 	}
-
 	std::cout << YELLOW << "\n=== TEST 2 : ShrubberyCreationForm ===" << RESET << std::endl;
-	try {
+	try
+	{
 		Bureaucrat alice("Alice", 130);
 		ShrubberyCreationForm shrub("garden");
 		alice.signForm(shrub);
@@ -46,35 +50,39 @@ int main()
 
 		Bureaucrat bob("Bob", 1);
 		bob.signForm(shrub);
-		bob.executeForm(shrub); // crée fichier "garden_shrubbery"
-	} catch (std::exception &e) {
+		bob.executeForm(shrub);
+	} 
+	catch (std::exception &e) 
+	{
 		std::cerr << RED << e.what() << RESET << std::endl;
 	}
-
 	std::cout << YELLOW << "\n=== TEST 3 : RobotomyRequestForm ===" << RESET << std::endl;
 	try {
 		Bureaucrat john("John", 40);
 		RobotomyRequestForm robot("Bender");
 
 		john.signForm(robot);
-		for (int i = 0; i < 4; i++) {
-			john.executeForm(robot); // test random
+		for (int i = 0; i < 4; i++)
+		{
+			john.executeForm(robot);
 		}
-	} catch (std::exception &e) {
+	} 
+	catch (std::exception &e)
+	{
 		std::cerr << RED << e.what() << RESET << std::endl;
 	}
-
 	std::cout << YELLOW << "\n=== TEST 4 : PresidentialPardonForm ===" << RESET << std::endl;
-	try {
+	try 
+	{
 		Bureaucrat prez("Zaphod", 1);
 		PresidentialPardonForm pardon("Ford Prefect");
 
 		prez.signForm(pardon);
 		prez.executeForm(pardon);
-	} catch (std::exception &e) {
+	}
+	catch (std::exception &e)
+	{
 		std::cerr << RED << e.what() << RESET << std::endl;
 	}
-
 	return 0;
 }
- 

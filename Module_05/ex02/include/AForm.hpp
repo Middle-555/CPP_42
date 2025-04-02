@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:15:52 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/02 15:48:33 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 17:37:14 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdexcept>
 #include <fstream>
 #include <cstdlib>
+#include <ctime>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;

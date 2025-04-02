@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/02 15:55:29 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 17:31:47 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	Bureaucrat::signForm(AForm &form)
 	}
 }
 
-void	Bureaucrat::execute(AForm const &form)
+void	Bureaucrat::executeForm(AForm const &form)
 {
 	try
 	{
@@ -106,8 +106,3 @@ void	Bureaucrat::execute(AForm const &form)
 		      << " because " << e.what() << std::endl;
 	}
 } 
-
-void	Bureaucrat::executeForm(AForm const & form)
-{
-	
-}

@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 16:21:42 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/31 17:02:41 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 17:43:03 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ std::string	AForm::getName() const
 
 void 	AForm:: beSigned(Bureaucrat const &bureaucrat)
 {
+	if (_signed)
+		throw std::runtime_error("Form already signed.");
 	if (bureaucrat.getGrade() > _gradeToSign)
 		throw GradeTooLowException();
 	_signed = true;
