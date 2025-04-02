@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:51 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/02 14:01:02 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 15:54:32 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ public:
 
 	void	incrementGrade();
 	void	decrementGrade();
-	void signForm(AForm &form);
-	void execute(AForm const & form);
+	void	signForm(AForm &form);
+	void	execute(AForm const & form);
+	void	executeForm(AForm const & form);
 	class GradeTooHighException : public std::exception 
 	{
    	public:

@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:30 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/02 11:31:49 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 15:53:25 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,65 @@
 #include "../include/RobotomyRequestForm.hpp"
 #include "../include/ShrubberyCreationForm.hpp"
 
-int main() {
-	std::cout << "\033[1;34m=== TEST SHRUBBERY CREATION FORM ===\033[0m" << std::endl;
+
+#define RESET   "\033[0m"
+#define GREEN   "\033[32m"
+#define RED     "\033[31m"
+#define YELLOW  "\033[33m"
+#define CYAN    "\033[36m"
+
+int main()
+{
+	std::cout << YELLOW << "=== TEST 1 : Bureaucrat ===" << RESET << std::endl;
 	try {
-		Bureaucrat boss("Bob", 1);
-		ShrubberyCreationForm treeForm("garden");
-
-		std::cout << "\033[1;33m[INFO] Tentative d'exécution sans signature...\033[0m" << std::endl;
-		treeForm.execute(boss); // doit lancer NotSignedException
-
+		Bureaucrat bob("Bob", 3);
+		std::cout << bob << std::endl;
+		bob.incrementGrade();
+		std::cout << bob << std::endl;
+		bob.decrementGrade();
+		std::cout << bob << std::endl;
 	} catch (std::exception &e) {
-		std::cerr << "\033[1;31m[EXCEPTION] " << e.what() << "\033[0m" << std::endl;
+		std::cerr << RED << e.what() << RESET << std::endl;
 	}
 
-	std::cout << "\n\033[1;32m[INFO] Création d'un bureaucrate et signature du formulaire...\033[0m" << std::endl;
-
+	std::cout << YELLOW << "\n=== TEST 2 : ShrubberyCreationForm ===" << RESET << std::endl;
 	try {
-		Bureaucrat boss("Bob", 1);
-		ShrubberyCreationForm treeForm("garden");
+		Bureaucrat alice("Alice", 130);
+		ShrubberyCreationForm shrub("garden");
+		alice.signForm(shrub);
+		alice.executeForm(shrub);
 
-		boss.signForm(treeForm); // boss signe le formulaire
-
-		std::cout << "\033[1;33m[INFO] Exécution du formulaire signé...\033[0m" << std::endl;
-		boss.execute(treeForm); // exécution correcte → fichier garden_shrubbery
-
-		std::cout << "\033[1;32m[SUCCESS] Formulaire exécuté et fichier généré.\033[0m" << std::endl;
-	}
-	catch (std::exception &e) {
-		std::cerr << "\033[1;31m[EXCEPTION] " << e.what() << "\033[0m" << std::endl;
+		Bureaucrat bob("Bob", 1);
+		bob.signForm(shrub);
+		bob.executeForm(shrub); // crée fichier "garden_shrubbery"
+	} catch (std::exception &e) {
+		std::cerr << RED << e.what() << RESET << std::endl;
 	}
 
-	std::cout << "\n\033[1;34m=== FIN DU TEST ===\033[0m" << std::endl;
+	std::cout << YELLOW << "\n=== TEST 3 : RobotomyRequestForm ===" << RESET << std::endl;
+	try {
+		Bureaucrat john("John", 40);
+		RobotomyRequestForm robot("Bender");
+
+		john.signForm(robot);
+		for (int i = 0; i < 4; i++) {
+			john.executeForm(robot); // test random
+		}
+	} catch (std::exception &e) {
+		std::cerr << RED << e.what() << RESET << std::endl;
+	}
+
+	std::cout << YELLOW << "\n=== TEST 4 : PresidentialPardonForm ===" << RESET << std::endl;
+	try {
+		Bureaucrat prez("Zaphod", 1);
+		PresidentialPardonForm pardon("Ford Prefect");
+
+		prez.signForm(pardon);
+		prez.executeForm(pardon);
+	} catch (std::exception &e) {
+		std::cerr << RED << e.what() << RESET << std::endl;
+	}
+
 	return 0;
 }
  

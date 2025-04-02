@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:15:52 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/01 23:03:34 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 15:48:33 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <fstream>
+#include <cstdlib>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -33,11 +34,11 @@ public:
 	AForm& operator=(AForm const &other);
 	virtual ~AForm();
 
-	std::string getName() const;
-	int getGradeToSign() const;
-	int getGradeToExec() const;
-	void beSigned(Bureaucrat const &bureaucrat);
-	bool isSigned() const;
+	virtual std::string getName() const;
+	virtual int getGradeToSign() const;
+	virtual int getGradeToExec() const;
+	virtual void beSigned(Bureaucrat const &bureaucrat);
+	virtual bool isSigned() const;
 	virtual void execute(Bureaucrat const & executor) const = 0;
 	class GradeTooHighException : public std::exception 
 	{

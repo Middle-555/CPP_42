@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/02 14:00:46 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 15:55:29 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
 }
 
 void	Bureaucrat::signForm(AForm &form)
-void	Bureaucrat::signForm(AForm &form)
 {
 	try 
 	{
@@ -107,3 +106,8 @@ void	Bureaucrat::execute(AForm const &form)
 		      << " because " << e.what() << std::endl;
 	}
 } 
+
+void	Bureaucrat::executeForm(AForm const & form)
+{
+	
+}

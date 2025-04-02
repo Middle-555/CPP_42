@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 16:21:34 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/01 23:16:46 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 14:48:35 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other)
 ShrubberyCreationForm &ShrubberyCreationForm:: operator=(ShrubberyCreationForm const &other)
 {
 	if (this != &other)
+	{
+		AForm::operator=(other);
 		this->_target = other._target;
+	}
 	return (*this);
 }
 
