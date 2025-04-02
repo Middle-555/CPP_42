@@ -6,12 +6,14 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/25 16:31:20 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/31 17:28:07 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Bureaucrat.hpp"
-#include "../include/Form.hpp"
+#include "../include/AForm.hpp"
+
+Bureaucrat::Bureaucrat(): _name("Default"), _grade(150){}
 
 Bureaucrat::Bureaucrat(const std:: string name, int grade) : _name(name)
 {
@@ -26,6 +28,16 @@ Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Default Bureaucrat Destructor Called" << std::endl;
 	return ;
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade) {}
+    
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) 
+{
+    if (this != &other) {
+        this->_grade = other._grade;
+    }
+    return *this;
 }
 
 std::string	Bureaucrat::getName() const
@@ -68,7 +80,7 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
 	return os;
 }
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &form)
 {
 	try 
 	{

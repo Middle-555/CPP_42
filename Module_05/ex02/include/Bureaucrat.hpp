@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:51 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/31 16:30:38 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/31 17:27:21 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ private:
 	int	_grade;
 	
 public:
+	Bureaucrat();
 	Bureaucrat(const std::string _name, int _grade);
 	~Bureaucrat();
+	Bureaucrat(Bureaucrat const &other);
+	Bureaucrat& operator=(Bureaucrat const &other);
 
 	std::string	getName() const;
 	int	getGrade() const;

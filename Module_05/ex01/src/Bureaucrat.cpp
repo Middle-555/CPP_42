@@ -6,13 +6,12 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/31 17:20:08 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/03/31 17:27:33 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Bureaucrat.hpp"
 #include "../include/Form.hpp"
-
 
 Bureaucrat::Bureaucrat(): _name("Default"), _grade(150){}
 
