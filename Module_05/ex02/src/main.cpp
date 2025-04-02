@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:30 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/01 23:17:14 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 11:31:49 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main() {
 		boss.signForm(treeForm); // boss signe le formulaire
 
 		std::cout << "\033[1;33m[INFO] Exécution du formulaire signé...\033[0m" << std::endl;
-		boss.executeForm(treeForm); // exécution correcte → fichier garden_shrubbery
+		boss.execute(treeForm); // exécution correcte → fichier garden_shrubbery
 
 		std::cout << "\033[1;32m[SUCCESS] Formulaire exécuté et fichier généré.\033[0m" << std::endl;
 	}
@@ -49,3 +49,4 @@ int main() {
 	std::cout << "\n\033[1;34m=== FIN DU TEST ===\033[0m" << std::endl;
 	return 0;
 }
+ 

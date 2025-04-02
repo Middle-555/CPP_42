@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 16:21:08 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/01 22:39:49 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 10:52:33 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	virtual ~ShrubberyCreationForm();
 	ShrubberyCreationForm(ShrubberyCreationForm const &other);
 	ShrubberyCreationForm& operator=(ShrubberyCreationForm const &other);
-	virtual void execute(Bureaucrat const & executor) const;
+	void	execute(Bureaucrat const & executor) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:51 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/01 22:34:39 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/02 10:54:13 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 	void	incrementGrade();
 	void	decrementGrade();
 	void signForm(AForm &form);
-	Bureaucrat executeForm(AForm const & form);
+	void execute(AForm const & form);
 	class GradeTooHighException : public std::exception 
 	{
    	public:
