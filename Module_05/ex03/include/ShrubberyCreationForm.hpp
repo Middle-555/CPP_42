@@ -6,14 +6,14 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 16:21:08 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/02 14:58:24 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/03 16:05:17 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
-#include "../include/AForm.hpp"
+#include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm
 {

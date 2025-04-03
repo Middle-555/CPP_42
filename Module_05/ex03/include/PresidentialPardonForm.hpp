@@ -6,14 +6,14 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 16:23:46 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/02 15:06:24 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/03 16:05:03 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef 	PRESIDENTIALPARDONFORM_HPP
 # define	PRESIDENTIALPARDONFORM_HPP
 
-#include "../include/AForm.hpp"
+#include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm
 {
