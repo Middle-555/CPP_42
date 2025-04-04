@@ -6,11 +6,20 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 16:36:42 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/03 18:20:54 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/04 14:25:32 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+ScalarConverter::ScalarConverter(){}
+ScalarConverter::~ScalarConverter(){}
+ScalarConverter::ScalarConverter(ScalarConverter const &other) {*this = other;}
+ScalarConverter &ScalarConverter::operator=(ScalarConverter const &other)
+{
+	(void)other;
+	return *this;
+}
 
 bool ScalarConverter::checkChar(std::string const &literal)
 {
