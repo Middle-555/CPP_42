@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 16:37:09 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/03 17:58:48 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/07 18:59:57 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "../include/ScalarConverter.hpp"
 
 int main(int argc, char **argv)
 {

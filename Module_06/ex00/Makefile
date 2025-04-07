@@ -6,7 +6,7 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/18 13:28:14 by kpourcel          #+#    #+#              #
-#    Updated: 2025/03/26 12:20:24 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/04/07 19:01:03 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,9 @@ run: all
 leaks: all
 	@echo "🧠 Vérification des fuites mémoire (macOS)..."
 	@leaks --atExit -- ./$(NAME)
+valgrind: all
+	@echo "🧠 Lancement avec valgrind..."
+	@valgrind --leak-check=full ./$(NAME)
 
 help:
 	@echo "🛠️  Liste des commandes disponibles :"
@@ -70,6 +73,7 @@ help:
 	@echo "  make fclean  : Supprime les objets + binaire"
 	@echo "  make re      : Recompile tout"
 	@echo "  make leaks   : Vérifie les fuites mémoire (macOS)"
+	@echo "  make valgrind: Lance le programme avec valgrind"
 	@echo "  make help    : Affiche cette aide"
 
 .PHONY: all clean fclean re run help leaks

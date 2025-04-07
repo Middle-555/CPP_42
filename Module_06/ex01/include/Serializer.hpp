@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:54:09 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/04 14:36:25 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/07 19:14:25 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include <string>
-#include <cstdint>
+#include <stdint.h>
 #include <iomanip> 
 #include "Data.hpp"
 

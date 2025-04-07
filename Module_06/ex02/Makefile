@@ -6,24 +6,26 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/18 13:28:14 by kpourcel          #+#    #+#              #
-#    Updated: 2025/03/26 12:20:24 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/04/07 19:24:19 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Base
-CXX		=	c++
-CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+MAKEFLAGS += --no-print-directory
 
-SRC_DIR		=	src
-INC_DIR		=	include
-OBJ_DIR		=	obj
+NAME        =   Base
+CXX         =   c++
+CXXFLAGS    =   -Wall -Wextra -Werror -std=c++98
 
-SRCS		=	$(wildcard $(SRC_DIR)/*.cpp)
-OBJS		=	$(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRCS))
-INCLUDES	=	-I$(INC_DIR)
+SRC_DIR     =   src
+INC_DIR     =   include
+OBJ_DIR     =   obj
 
-HEADER		=	"📦 Compilation du projet $(NAME)"
-LINE		=	"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+SRCS        =   $(wildcard $(SRC_DIR)/*.cpp)
+OBJS        =   $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRCS))
+INCLUDES    =   -I$(INC_DIR)
+
+HEADER      =   "📦 Compilation du projet $(NAME)"
+LINE        =   "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 all: $(NAME)
 
@@ -32,9 +34,9 @@ $(OBJ_DIR):
 
 $(NAME): $(OBJ_DIR) $(OBJS)
 	@echo ""
-	@echo "$(LINE)"
-	@echo "$(HEADER)"
-	@echo "$(LINE)"
+	@echo $(LINE)
+	@echo $(HEADER)
+	@echo $(LINE)
 	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $(OBJS)
 	@echo "✅ Compilation terminée."
 
@@ -58,6 +60,10 @@ run: all
 	@echo "🚀 Lancement de $(NAME)..."
 	@./$(NAME)
 
+valgrind: all
+	@echo "🧪 Analyse mémoire avec Valgrind..."
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
+
 leaks: all
 	@echo "🧠 Vérification des fuites mémoire (macOS)..."
 	@leaks --atExit -- ./$(NAME)
@@ -70,12 +76,7 @@ help:
 	@echo "  make fclean  : Supprime les objets + binaire"
 	@echo "  make re      : Recompile tout"
 	@echo "  make leaks   : Vérifie les fuites mémoire (macOS)"
+	@echo "  make valgrind: Vérifie les fuites mémoire (Linux)"
 	@echo "  make help    : Affiche cette aide"
 
-.PHONY: all clean fclean re run help leaks
-
-
-
-
-
-
+.PHONY: all clean fclean re run help leaks valgrind

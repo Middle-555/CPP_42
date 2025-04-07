@@ -6,11 +6,11 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 16:36:42 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/04 14:25:32 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/07 19:10:24 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "../include/ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter(){}
 ScalarConverter::~ScalarConverter(){}
@@ -104,6 +104,11 @@ LiteralType ScalarConverter::detectType(std::string const &literal)
 	return TYPE_INVALID;
 }
 
+static bool is_nan(double d)
+{
+    return d != d;
+}
+
 void 	ScalarConverter::convert(std::string const &literal)
 {
 	LiteralType type = detectType(literal);
@@ -127,7 +132,7 @@ void 	ScalarConverter::convert(std::string const &literal)
    			d = static_cast<double>(i);
     			break;
 		case TYPE_FLOAT:
-    			f = std::strtof(literal.c_str(), NULL);
+			f = static_cast<float>(std::strtod(literal.c_str(), NULL));
     			c = static_cast<char>(f);
     			i = static_cast<int>(f);
     			d = static_cast<double>(f);
@@ -142,7 +147,7 @@ void 	ScalarConverter::convert(std::string const &literal)
             		std::cout << "Impossible à convertir : type invalide" << std::endl;
             		return;
     	}
-	if (std::isnan(d) || d < 0 || d > 127)
+	if (is_nan(d) || d < 0 || d > 127)
         	std::cout << "char: impossible" << std::endl;
     	else if (!std::isprint(c))
         	std::cout << "char: Non displayable" << std::endl;
