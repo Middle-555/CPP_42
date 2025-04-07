@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:30 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/07 14:47:56 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/07 15:12:42 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 
 int main()
 {
+	std::srand(std::time(0));
 	Intern intern;
 	Bureaucrat executor("Jean-Charles", 1);
 

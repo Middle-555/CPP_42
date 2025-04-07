@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 16:21:42 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/02 17:43:03 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/07 15:10:59 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute)
         throw GradeTooLowException();
 }
 
-AForm::~AForm()
-{
-	std::cout << "Default AForm Destructor Called" << std::endl;
-}
+AForm::~AForm(){}
 
 AForm::AForm(const AForm &other)
     : _name(other._name), _signed(other._signed),
