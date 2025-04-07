@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 17:16:35 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/02 14:01:18 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/07 14:49:24 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,7 @@ Form &Form::operator=(const Form &other)
     return *this;
 }
 
-Form::~Form()
-{
-	std::cout << "Default Form Destructor Called" << std::endl;
-}
+Form::~Form(){}
 
 int	Form::getGradeToExec() const
 {

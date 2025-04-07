@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 13:29:38 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/03/31 17:15:05 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/07 14:49:44 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,7 @@ Bureaucrat::Bureaucrat(const std:: string name, int grade) : _name(name)
 		_grade = grade;
 }
 
-Bureaucrat::~Bureaucrat()
-{
-	std::cout << "Default Bureaucrat Destructor Called" << std::endl;
-	return ;
-}
+Bureaucrat::~Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade) {}
     
