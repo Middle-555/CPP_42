@@ -6,13 +6,13 @@
 #    By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/18 13:28:14 by kpourcel          #+#    #+#              #
-#    Updated: 2025/04/12 18:05:37 by kpourcel         ###   ########.fr        #
+#    Updated: 2025/04/13 10:59:01 by kpourcel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 MAKEFLAGS += --no-print-directory
 
-NAME        =   Template
+NAME        =   Iter
 CXX         =   c++
 CXXFLAGS    =   -Wall -Wextra -Werror -std=c++98
 
