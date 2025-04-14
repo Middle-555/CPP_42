@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 12:43:10 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/14 12:41:53 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:48:31 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <stdexcept>
 # include <algorithm>
 # include <vector>
+# include <climits>
 # include <list>
 
 
@@ -54,8 +55,4 @@ void printElem(T  &elem)
 	std::cout << elem << " ";
 }
 
-void printInt(int  &n) 
-{
-	std::cout << n << " ";
-}
 #endif
