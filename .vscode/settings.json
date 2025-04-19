@@ -131,6 +131,7 @@
     "stop_token": "cpp",
     "thread": "cpp",
     "cinttypes": "cpp",
-    "__assertion_handler": "cpp"
+    "__assertion_handler": "cpp",
+    "map": "cpp"
   }
 }
