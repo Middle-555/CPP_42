@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 12:43:10 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/17 16:17:01 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/19 12:23:37 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,10 @@ inline void printPair(const std::string &label, const T &a, const T &b)
 }
 
 template<typename T>
-void printElem(T  &elem) 
+inline void printElem(T  &elem) 
 {
 	std::cout << elem << " ";
 }
 
-void printInt(int  &n) 
-{
-	std::cout << n << " ";
-}
+
 #endif

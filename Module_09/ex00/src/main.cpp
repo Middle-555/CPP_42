@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 15:49:00 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/19 12:21:36 by kpourcel         ###   ########.fr       */
+/*   Created: 2025/04/19 12:20:38 by kpourcel          #+#    #+#             */
+/*   Updated: 2025/04/19 12:21:05 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "BitcoinExchange.hpp"
 
-#include "TestUtils.hpp"
-
-class BitcoinExchange
+int 	main()
 {
-private:
-	std::map<std::string, float> _data;
-public:
-	BitcoinExchange();
-	BitcoinExchange(BitcoinExchange const &other);
-	BitcoinExchange& operator=(BitcoinExchange const &other);
-	~BitcoinExchange();
-	void	ExtractData(const std::string &filename);
-	void	PrintData(void) const;
-};
+	BitcoinExchange btc;
+	btc.ExtractData("data.csv");
+	btc.PrintData();
+}
