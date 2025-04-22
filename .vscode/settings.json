@@ -132,6 +132,9 @@
     "thread": "cpp",
     "cinttypes": "cpp",
     "__assertion_handler": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "*.tpp": "cpp",
+    "__tree": "cpp",
+    "list": "cpp"
   }
 }

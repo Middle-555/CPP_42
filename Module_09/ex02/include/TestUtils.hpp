@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 12:43:10 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/22 14:30:13 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/22 18:10:18 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # include <map>
 # include <list>
 # include <deque>
+# include <sys/time.h>
+
 
 
 // Couleurs terminal ANSI
