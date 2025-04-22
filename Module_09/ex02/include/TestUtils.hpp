@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 12:43:10 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/19 12:23:37 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:30:13 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <vector>
 # include <map>
 # include <list>
+# include <deque>
 
 
 // Couleurs terminal ANSI
@@ -57,5 +58,13 @@ inline void printElem(T  &elem)
 	std::cout << elem << " ";
 }
 
+template <typename Container>
+void printContainer(const std::string& name, const Container& c)
+{
+	std::cout << name << ": ";
+	for (size_t i = 0; i < c.size(); ++i)
+		std::cout << c[i] << " ";
+	std::cout << std::endl;
+}
 
 #endif
