@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 14:00:01 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/22 18:40:22 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/25 11:48:20 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ std::vector<int> PmergeMe::isValidInput(int argc, char **argv)
 		int value = std::atoi(arg.c_str());
 		if (value < 0)
 			throw std::runtime_error("Negative number not allowed.");
+		for (size_t k = 0; k < numbers.size(); ++k)
+		{
+			if (numbers[k] == value)
+				throw std::runtime_error("Duplicate number detected: " + arg);
+		}
 		numbers.push_back(value);
 	}
 	return numbers;
