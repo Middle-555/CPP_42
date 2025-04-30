@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 15:00:27 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/14 16:17:08 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:39:20 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	Span::addNumber(int n)
 
 int	Span::shortestSpan() const
 {
-
 	if (_data.size() < 2)
 		throw std::length_error("Span need more number !");
 	std::vector<int> tmp = _data;
@@ -53,7 +52,6 @@ int	Span::shortestSpan() const
 	}
 	return min;
 }
-
 
 int	Span::longestSpan() const
 {

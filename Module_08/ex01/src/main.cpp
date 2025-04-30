@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:11:39 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/14 17:24:08 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:51:23 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main(void)
 		Span sp(2);
 		sp.addNumber(21);
 		sp.addNumber(84);
-		sp.addNumber(999); // Devrait lancer une exception
+		sp.addNumber(999);
 	}
 	catch (const std::exception &e)
 	{

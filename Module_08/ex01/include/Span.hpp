@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:47:47 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/14 17:24:24 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/29 15:19:02 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,5 @@ public:
 		for (Iterator it = begin; it != end; ++it)
 			_data.push_back(*it);
 	}
-	
 };
 
