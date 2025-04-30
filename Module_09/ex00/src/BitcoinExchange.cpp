@@ -6,7 +6,7 @@
 /*   By: kpourcel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:58:04 by kpourcel          #+#    #+#             */
-/*   Updated: 2025/04/19 13:04:24 by kpourcel         ###   ########.fr       */
+/*   Updated: 2025/04/30 14:34:17 by kpourcel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,45 @@ void	BitcoinExchange::exitWithError(const std::string &msg)
 	exit(1);
 }
 
+bool	BitcoinExchange::isValidDateFormat(const std::string &date)
+{
+	if (date.length() != 10)
+		return false;
+	if (!isdigit(date[0]) || !isdigit(date[1]) || !isdigit(date[2]) || !isdigit(date[3]))
+		return false;
+	if (date[4] != '-')
+		return false;
+	if (!isdigit(date[5]) || !isdigit(date[6]))
+		return false;
+	if (date[7] != '-')
+		return false;
+	if (!isdigit(date[8]) || !isdigit(date[9]))
+		return false;
+	int year = std::atoi(date.substr(0, 4).c_str());
+	int month = std::atoi(date.substr(5, 2).c_str());
+	int day = std::atoi(date.substr(8, 2).c_str());
+	if (year < 2009)
+		return false;
+	if (month < 1 || month > 12)
+		return false;
+	if (day < 1 || day > 31)
+		return false;
+	return true;
+}
 
-bool	BitcoinExchange::isValidValue(const std::string &valueStr, float &value)
+
+bool	BitcoinExchange::isValidRate(const std::string &valueStr, float &value)
 {
 	if (valueStr.empty())
 		return false;
+	value = std::atof(valueStr.c_str());
+	return value >= 0;
+}
 
+bool BitcoinExchange::isValidInputValue(const std::string &valueStr, float &value)
+{
+	if (valueStr.empty())
+		return false;
 	value = std::atof(valueStr.c_str());
 	return value >= 0 && value <= 1000;
 }
@@ -83,6 +116,7 @@ bool	BitcoinExchange::parseLine(const std::string &line, char delim, std::string
 	}
 	return false;
 }
+
 void	BitcoinExchange::ExtractData(const std::string &filename)
 {
 	std::ifstream file(filename.c_str());
@@ -95,11 +129,25 @@ void	BitcoinExchange::ExtractData(const std::string &filename)
 		std::string date, valueStr;
 		float value;
 		if (!parseLine(line, ',', date, valueStr))
-			return errorLine("bad format", line);
-		if (!isValidValue(valueStr, value))
-			return errorLine("invalid value", line);
+		{
+			errorLine("bad format", line);
+			continue;
+		}
+		if (!isValidDateFormat(date))
+		{
+			errorLine("invalid date format", line);
+			continue;
+		}
+		if (!isValidRate(valueStr, value))
+		{
+			errorLine("invalid value", line);
+			continue;
+		}
 		if (_data.find(date) != _data.end())
-			return errorLine("duplicate date", line);
+		{
+			errorLine("duplicate date", line);
+			continue;
+		}
 		_data[date] = value;
 	}
 }
@@ -139,9 +187,20 @@ void	BitcoinExchange::ProcessInputFile(const std::string &filename)
 		std::string date, valueStr;
 		float value;
 		if (!parseLine(line, '|', date, valueStr))
-			return errorLine("bad format", line);
-		if (!isValidValue(valueStr, value))
-			return errorLine("invalid value", line);
+		{
+			errorLine("bad format", line);
+			continue;
+		}
+		if (!isValidDateFormat(date))
+		{
+			errorLine("invalid date format", line);
+			continue;
+		}
+		if (!isValidInputValue(valueStr, value))
+		{
+			errorLine("invalid value", line);
+			continue;
+		}
 		handleExchange(date, value);
 	}
 }
