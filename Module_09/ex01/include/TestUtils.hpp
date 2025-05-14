@@ -25,7 +25,7 @@
 # include <vector>
 # include <map>
 # include <list>
-
+# include <stack>
 
 // Couleurs terminal ANSI
 # define RESET   "\033[0m"
